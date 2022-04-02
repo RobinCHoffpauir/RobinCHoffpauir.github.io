@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<!--
+--->
+<html lang="">
+	<head>
+		<title>Baseball Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/plots/white_logo_dark_background.jpg" alt="" /></span><span class="title">Robin C. Hoffpauir</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="Batters.html">Hitting Analysis</a></li>
+							<li><a href="Pitchers.html">Pitching Analysis</a></li>
+							<li><a href="Team.html">Team Analysis/Advanced Scouting</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1><u>Team Analysis/Advanced Scouting Report</u></h1>
+
+							<!-- Text -->
+								<section>
+									<h2></h2>
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<h3>Team Advanced Scouting Report</h3>
+											<ul>
+												<li>Opp. pitching staff's individual pitch arsenal/pitch tendencies </li>
+												<li>Opp. pitching staff's arm slots</li>
+												<li>Opp. lineup's plate discipline</li>
+												<li>Previous matchups stats and trends</li>
+											</ul>
+										</div>
+									</div>
+								</section>
+							<!-- Main Paragraph -->
+								<section>
+									<h3><u>Team Analysis</u></h3>
+									<p><span class="image top"><img src="release_speedcol.png" alt="" /></span> This is a representation of an entire team's (the Colorado Rockies) pitching staff's arm angles. This plot was built using the statcast data that MLB puts out daily. The pitchers mound would be placed at the '0' mark on the X axis and the Y axis is feet off the ground. so any dots to the left of 0 on the X axis is from a Right handed pitcher, and all those on the right side of 0 are lefty's (it is the view the batter and catcher have)</p>
+									<p><span class="image bottom"><img src="zonedis.png" alt="" /></span> This is a plot that represents the same staff's (Rockies) pitch movement in the zone. Again this angle is the Catcher's perspective with 'pfx_x' on the x axis showing horizontal movement, and 'pfx_z' showing the vertical movement by pitch. The pitch type is the color scale used with legend to plot on side</p>
+									<p><span class="image bottom"><img src="images/plots/pfx_pfz_bypitch.png" alt="" /></span> This graph is showing pitches horizontal movement (x-axis) and vertical movement (y-axis)</p>
+									<p><span class="image bottom"><img src="images/plots/hit_coordinates.png" alt="" /></span> While this image shows an inverted view of where each event landed and is color coded by the batted ball type</p>
+									<p><span class="image bottom"><img src="l_a V. l_s relplot.png" alt="" /></span> This plot shows the relationship of launch_angle and launch_speed, with the colors showing what type of batted ball event it was</p>
+								</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name"></label><input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<label for="email"></label><input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<label for="message"></label><textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Robin C. Hoffpauir</a></li>
+							</ul>
+						</div>
+					</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		</body>
+</html>
