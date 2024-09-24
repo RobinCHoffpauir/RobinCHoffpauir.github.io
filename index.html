@@ -26,6 +26,32 @@
     </nav>
 
     <!-- Banner -->
+    <style>
+        #banner {
+            background: url('images/Headshot.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+        }
+    
+        #banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% transparency */
+            z-index: 1;
+        }
+    
+        #banner .inner {
+            position: relative;
+            z-index: 2; /* Ensures the text is above the background */
+        }
+    </style>
+    
     <section id="banner">
         <div class="inner">
             <h1>Welcome to My Channel Sales Portfolio</h1>
@@ -39,7 +65,7 @@
     <!-- One -->
     <article id="one" class="post style1">
         <div class="image">
-            <img src="images/pic14.jpg" alt="" data-position="75% center" width="1400" height="788">
+            <img src="images/Headshot.jpg" alt="" data-position="75% center" width="1400" height="788">
         </div>
         <div class="content">
             <div class="inner">
@@ -60,6 +86,22 @@
             </div>
         </div>
     </article>
+    
+    
+    <!-- Enablement Documents Section -->
+    <section id="enablement-docs">
+        <div class="enablement-docs">
+            <header>
+                <h2>Channel Partner Enablement Documents</h2>
+            </header>
+            <p>Below are some key enablement documents that showcase my experience in channel sales:</p>
+        <ul>
+            <li><a href="assets/files/Teams Analytics .pdf" target="_blank">MS Teams/Azure comarketing</a></li>
+            <li><a href="assets/files/Infortel Select - Battle Card 12-13-2018.pdf" target="_blank">Infortel Select Battle Card</a></li>
+            <li><a href="assets/files/CompunetProfile.docx" target="_blank">Example Partner Profile (Internal)</a></li>
+        </ul>
+    </div>
+</section>
 
     <!-- Two -->
     <article id="two" class="post invert style1 alt">
@@ -96,7 +138,7 @@
     <!-- Three -->
     <article id="three" class="post style2">
         <div class="image">
-            <img src="images/pic12.jpg" alt="" data-position="80% center" width="1400" height="788">
+            <img src="images/ISI_infographic.png" alt="" data-position="80% center" width="1400" height="788">
         </div>
         <div class="content">
             <div class="inner">
