@@ -6,34 +6,31 @@
     <title>Robin Hoffpauir | SaaS Sales Professional</title>
 
     <style>
+      /* Product Sans Font Setup */
       @font-face {
         font-family: 'Product Sans';
         src: url('assets/fonts/ProductSans-Light.ttf') format('truetype');
         font-weight: 300;
         font-style: normal;
       }
-
       @font-face {
         font-family: 'Product Sans';
         src: url('assets/fonts/ProductSans-Regular.ttf') format('truetype');
         font-weight: 400;
         font-style: normal;
       }
-
       @font-face {
         font-family: 'Product Sans';
         src: url('assets/fonts/ProductSans-Medium.ttf') format('truetype');
         font-weight: 500;
         font-style: normal;
       }
-
       @font-face {
         font-family: 'Product Sans';
         src: url('assets/fonts/ProductSans-Bold.ttf') format('truetype');
         font-weight: 700;
         font-style: normal;
       }
-
       @font-face {
         font-family: 'Product Sans';
         src: url('assets/fonts/ProductSans-Black.ttf') format('truetype');
@@ -41,10 +38,39 @@
         font-style: normal;
       }
 
+      /* Override Roboto in theme to Product Sans */
+      :root {
+        --font-family: 'Product Sans', sans-serif;
+        --font-weight-light: 300;
+        --font-weight-regular: 400;
+        --font-weight-medium: 500;
+        --font-weight-bold: 700;
+        --font-weight-black: 900;
+      }
+
       body {
-        font-family: 'Product Sans', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-regular);
+      }
+
+      h1 {
+        font-weight: var(--font-weight-black);
+      }
+
+      h2, h3 {
+        font-weight: var(--font-weight-bold);
+      }
+
+      p, li {
+        font-weight: var(--font-weight-regular);
+      }
+
+      .eyebrow, .card-subtitle {
+        font-weight: var(--font-weight-light);
+      }
+
+      .btn, strong, a {
+        font-weight: var(--font-weight-medium);
       }
     </style>
 
@@ -153,17 +179,63 @@
           <h2 id="portfolio-title">Portfolio Photo Strategy</h2>
           <p class="section-intro">Each image below is curated for a specific touchpoint so your brand feels cohesive across your portfolio, resume, and social presence.</p>
           <div class="media-grid">
-            <!-- (media-card elements as in your original code) -->
+            <article class="media-card">
+              <figure>
+                <img src="images/turtleneck&jacket.jpg" alt="Robin C. Hoffpauir in a tailored jacket, standing confidently." loading="lazy" />
+                <figcaption>Homepage Hero &amp; About Section</figcaption>
+              </figure>
+              <p>Use as the primary hero shot to deliver a polished first impression paired with your professional headline.</p>
+            </article>
+
+            <article class="media-card">
+              <figure>
+                <img src="images/mirror_jacket_bgblur.jpg" alt="Robin C. Hoffpauir wearing a blazer and smiling toward the camera." loading="lazy" />
+                <figcaption>LinkedIn &amp; Résumé Header</figcaption>
+              </figure>
+              <p>Feature this as your signature headshot across LinkedIn, your résumé, and networking platforms for visual continuity.</p>
+            </article>
+
+            <article class="media-card">
+              <figure>
+                <img src="images/buttondown_mirror.jpg" alt="Robin C. Hoffpauir dressed in smart casual attire." loading="lazy" />
+                <figcaption>Culture &amp; Day-in-the-Life</figcaption>
+              </figure>
+              <p>Great for behind-the-scenes or team culture content, illustrating approachability and energy.</p>
+            </article>
+
+            <article class="media-card">
+              <figure>
+                <img src="images/outdoor_polo.jpg" alt="Robin C. Hoffpauir outdoors in a polished polo." loading="lazy" />
+                <figcaption>Client Testimonials</figcaption>
+              </figure>
+              <p>Pair with client stories to communicate credibility in a relaxed, relatable way.</p>
+            </article>
+
+            <article class="media-card">
+              <figure>
+                <img src="images/greekkey_mandarincollar.jpg" alt="Robin C. Hoffpauir smiling in patterned attire." loading="lazy" />
+                <figcaption>Community &amp; Outreach</figcaption>
+              </figure>
+              <p>Ideal for showcasing volunteer efforts or community engagement where warmth and openness matter.</p>
+            </article>
+
+            <article class="media-card">
+              <figure>
+                <img src="images/pointing_conference.jpg" alt="Robin C. Hoffpauir presenting during a conference." loading="lazy" />
+                <figcaption>Thought Leadership</figcaption>
+              </figure>
+              <p>Highlight in speaking engagements, blog posts, or case studies to underscore expertise and presence.</p>
+            </article>
           </div>
         </section>
 
         <section aria-labelledby="podcast-title" class="podcast-section">
           <h2 id="podcast-title">Featured Podcast Interview</h2>
-              <iframe data-testid="embed-iframe" style="border-radius: 12px"
-              src="https://open.spotify.com/embed/episode/4kKGvawZUtFSpjLTwGHFoE?utm_source=generator&amp;theme=0"
-              width="100%" height="352" frameborder="0" allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy" title="Training That Sticks podcast episode on Spotify"></iframe>
+          <p class="section-intro">Listen to my conversation on Training That Sticks to hear how I cultivate durable sales processes and winning partner programs.</p>
+          <div class="podcast-embeds">
+            <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width: 100%; max-width: 660px; overflow: hidden; border-radius: 10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/training-that-sticks-with-robin-hoffpauir/id1811359309?i=1000730615659" title="Training That Sticks podcast episode on Apple Podcasts"></iframe>
+
+            <iframe data-testid="embed-iframe" style="border-radius: 12px" src="https://open.spotify.com/embed/episode/4kKGvawZUtFSpjLTwGHFoE?utm_source=generator&amp;theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Training That Sticks podcast episode on Spotify"></iframe>
           </div>
         </section>
 
@@ -172,7 +244,7 @@
           <p>I am always open to discussing SaaS go-to-market strategy, partnerships, and customer success initiatives.</p>
           <p>
             <strong>Email:</strong>
-            <a href="mailto:Hoffpauirrobin772@gmail.com">Hoffpauirrobin772@gmail.com</a>
+            <a href="mailto:RobinHoffpauir772@gmail.com">RobinHoffpauir772@gmail.com</a>
             • <strong>Phone:</strong>
             <a href="tel:18502257539">850-225-7539</a>
           </p>
