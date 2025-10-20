@@ -38,7 +38,6 @@
         font-style: normal;
       }
 
-      /* Override Roboto in theme to Product Sans */
       :root {
         --font-family: 'Product Sans', sans-serif;
         --font-weight-light: 300;
@@ -72,6 +71,33 @@
       .btn, strong, a {
         font-weight: var(--font-weight-medium);
       }
+
+      /* Portfolio Card Styling */
+      .media-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        object-position: 50% 25%; /* adjust vertical position */
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+      }
+
+      .media-card a {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .media-card:hover img {
+        transform: scale(1.03);
+      }
+
+      .media-card:hover {
+        transform: translateY(-4px);
+        transition: transform 0.3s ease;
+      }
     </style>
 
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -87,7 +113,7 @@
           <p class="eyebrow">SaaS Sales Professional &amp; Innovation Strategist</p>
           <h1>Robin C. Hoffpauir</h1>
           <p>
-            I bring more than six years of value-driven SaaS sales experience,
+            I bring more than eight years of value-driven SaaS sales experience,
             pairing partner enablement with a relentless focus on customer
             outcomes. From net-new acquisition to expansion and retention, I
             guide teams through the full revenue lifecycle with clarity,
@@ -105,7 +131,8 @@
       </header>
 
       <main>
-        <section aria-labelledby="experience-title">
+         <section aria-labelledby="experience-title">
+        <!-- Keep your other sections (experience, skills, etc.) as-is -->
           <h2 id="experience-title">Professional Experience</h2>
 
           <article class="card">
@@ -176,59 +203,71 @@
         </section>
 
         <section aria-labelledby="portfolio-title">
-          <h2 id="portfolio-title">My Skillsy</h2>
-          <p class="section-intro">Each link below will bring you to its respective page with more details!.</p>
+          <h2 id="portfolio-title">My Skills</h2>
+          <p class="section-intro">Each link below will bring you to its respective page with more details!</p>
+
           <div class="media-grid">
             <article class="media-card">
-              <figure>
-                <img src="images/turtleneck&jacket.jpg" alt="Robin C. Hoffpauir in a tailored jacket, standing confidently." loading="lazy" />
-                <figcaption>Homepage Hero &amp; About Section</figcaption>
-              </figure>
-              <p>Use as the primary hero shot to deliver a polished first impression paired with your professional headline.</p>
+              <a href="about.html">
+                <figure>
+                  <img src="images/turtleneck&jacket.jpg" alt="Robin C. Hoffpauir in a tailored jacket, standing confidently." loading="lazy" />
+                  <figcaption>Homepage Hero &amp; About Section</figcaption>
+                </figure>
+                <p>Polished professional presence and brand overview.</p>
+              </a>
             </article>
 
             <article class="media-card">
-              <figure>
-                <img src="images/mirror_jacket_bgblur.jpg" alt="Robin C. Hoffpauir wearing a blazer and smiling toward the camera." loading="lazy" />
-                <figcaption>LinkedIn &amp; Résumé Header</figcaption>
-              </figure>
-              <p>Feature this as your signature headshot across LinkedIn, your résumé, and networking platforms for visual continuity.</p>
+              <a href="resume.html">
+                <figure>
+                  <img src="images/mirror_jacket_bgblur.jpg" alt="Robin C. Hoffpauir wearing a blazer and smiling toward the camera." loading="lazy" />
+                  <figcaption>LinkedIn &amp; Résumé Header</figcaption>
+                </figure>
+                <p>Professional summary, experience, and achievements.</p>
+              </a>
             </article>
 
             <article class="media-card">
-              <figure>
-                <img src="images/buttondown_mirror.jpg" alt="Robin C. Hoffpauir dressed in smart casual attire." loading="lazy" />
-                <figcaption>Professional History</figcaption>
-              </figure>
-              <p>Experience and Professional qualifications.</p>
+              <a href="professional-history.html">
+                <figure>
+                  <img src="images/buttondown_mirror.jpg" alt="Robin C. Hoffpauir dressed in smart casual attire." loading="lazy" />
+                  <figcaption>Professional History</figcaption>
+                </figure>
+                <p>Career milestones and industry contributions.</p>
+              </a>
             </article>
 
             <article class="media-card">
-              <figure>
-                <img src="images/outdoor_polo.jpg" alt="Robin C. Hoffpauir outdoors in a polished polo." loading="lazy" />
-                <figcaption>Client Testimonials</figcaption>
-              </figure>
-              <p>Client Testimonials and success stories.</p>
+              <a href="testimonials.html">
+                <figure>
+                  <img src="images/outdoor_polo.jpg" alt="Robin C. Hoffpauir outdoors in a polished polo." loading="lazy" />
+                  <figcaption>Client Testimonials</figcaption>
+                </figure>
+                <p>Testimonials and success stories.</p>
+              </a>
             </article>
 
             <article class="media-card">
-              <figure>
-                <img src="images/greekkey_mandarincollar.jpg" alt="Robin C. Hoffpauir smiling ." loading="lazy" />
-                <figcaption>Data &amp Visualizations</figcaption>
-              </figure>
-              <p>Charts and Visualizations.</p>
+              <a href="data-visualizations.html">
+                <figure>
+                  <img src="images/greekkey_mandarincollar.jpg" alt="Robin C. Hoffpauir smiling." loading="lazy" />
+                  <figcaption>Data &amp; Visualizations</figcaption>
+                </figure>
+                <p>Interactive charts and business insights.</p>
+              </a>
             </article>
 
             <article class="media-card">
-              <figure>
-                <img src="images/pointing_conference.jpg" alt="Robin C. Hoffpauir presenting during a conference." loading="lazy" />
-                <figcaption>Thought Leadership</figcaption>
-              </figure>
-              <p>Check out my articles and posts to get the latest industry news and Tech Sales trends.</p>
+              <a href="thought-leadership.html">
+                <figure>
+                  <img src="images/pointing_conference.jpg" alt="Robin C. Hoffpauir presenting during a conference." loading="lazy" />
+                  <figcaption>Thought Leadership</figcaption>
+                </figure>
+                <p>Articles and perspectives on SaaS innovation.</p>
+              </a>
             </article>
           </div>
         </section>
-
         <section aria-labelledby="podcast-title" class="podcast-section">
           <h2 id="podcast-title">Featured Podcast Interview</h2>
           <p class="section-intro">Listen to my conversation on Training That Sticks to hear how I cultivate durable sales processes and winning partner programs.</p>
