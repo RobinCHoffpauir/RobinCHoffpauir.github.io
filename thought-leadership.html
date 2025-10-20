@@ -26,44 +26,68 @@
         box-shadow: var(--shadow-elevation-2);
       }
 
-      .rss-item h3 {
-        margin-bottom: 0.5rem;
-      }
-
       iframe {
         border-radius: 12px;
         box-shadow: var(--shadow-elevation-1);
+      }
+
+      .linkedin-section p a {
+        color: var(--color-primary);
       }
     </style>
   </head>
 
   <body>
-    <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Toggle Theme</button>
+    <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+      Toggle Theme
+    </button>
 
     <div class="container">
       <header class="hero" role="banner">
         <div class="hero-text">
           <h1>Thought Leadership</h1>
           <p class="eyebrow">Exploring Technology, Strategy, and Human Connection</p>
-          <p>Featuring my recent LinkedIn posts, podcast appearances, and original commentary on SaaS, AI, and geospatial innovation.</p>
+          <p>
+            A central hub for my latest insights — featuring live podcast embeds and a link to my active
+            LinkedIn feed where I share industry trends, SaaS strategies, and GTM innovation stories.
+          </p>
         </div>
       </header>
 
       <main>
-        <!-- LinkedIn Feed -->
+        <!-- LinkedIn Section -->
         <section aria-labelledby="linkedin-feed">
           <h2 id="linkedin-feed">Recent LinkedIn Posts</h2>
-          <p>The latest discussions and posts from my professional network.</p>
+          <p class="linkedin-section">
+            Follow my latest professional updates directly on
+            <a href="https://www.linkedin.com/in/robinchoffpauir" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>.
+            I post regularly about Google Maps Platform, Cloud co-selling, AI-driven sales enablement, and the evolving landscape of digital partnerships.
+          </p>
 
-          <div id="linkedin-rss" class="rss-feed">
-            <p>Loading latest posts...</p>
+          <div class="rss-feed">
+            <article class="rss-item">
+              <h3><a href="https://www.linkedin.com/in/robinchoffpauir/recent-activity/" target="_blank">🚀 Google Maps Marketplace Innovation</a></h3>
+              <p>Reflections on the growing ecosystem of verticalized solutions on the Google Maps Marketplace and what this means for digital-twin-driven retail experiences.</p>
+            </article>
+
+            <article class="rss-item">
+              <h3><a href="https://www.linkedin.com/in/robinchoffpauir/recent-activity/" target="_blank">🤝 Co-Selling with Hyperscalers</a></h3>
+              <p>Insights into how field reps and partners can align incentives to accelerate adoption and incremental revenue through the Cloud Marketplace model.</p>
+            </article>
+
+            <article class="rss-item">
+              <h3><a href="https://www.linkedin.com/in/robinchoffpauir/recent-activity/" target="_blank">🌍 Digital Twins and Spatial Intelligence</a></h3>
+              <p>How location intelligence and real-world data are reshaping business strategy, from mobility to infrastructure planning.</p>
+            </article>
           </div>
         </section>
 
         <!-- Podcast Embeds -->
         <section aria-labelledby="podcasts">
           <h2 id="podcasts">Podcast Features</h2>
-          <p>Listen to my recent podcast appearances discussing GTM strategy and enablement frameworks.</p>
+          <p>Listen to my recent podcast appearances discussing sales frameworks, enablement, and SaaS growth strategy.</p>
 
           <div class="podcast-embeds">
             <iframe
@@ -90,6 +114,7 @@
 
         <div class="hero-actions">
           <a class="btn" href="index.html">&larr; Back to Home</a>
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/robinchoffpauir" target="_blank">View LinkedIn Profile</a>
         </div>
       </main>
 
@@ -99,43 +124,5 @@
     </div>
 
     <script src="assets/js/theme.js"></script>
-
-    <!-- RSS Fetch Script -->
-    <script>
-      async function fetchLinkedInRSS() {
-        const rssContainer = document.getElementById("linkedin-rss");
-
-        // Example feed proxy (RSS to JSON)
-        const rssURL =
-          "https://api.rss2json.com/v1/api.json?rss_url=https://www.linkedin.com/feed/rss/"; 
-
-        try {
-          const response = await fetch(rssURL);
-          const data = await response.json();
-
-          if (!data.items || data.items.length === 0) {
-            rssContainer.innerHTML = "<p>No recent LinkedIn posts available.</p>";
-            return;
-          }
-
-          rssContainer.innerHTML = data.items
-            .slice(0, 5)
-            .map(
-              (item) => `
-                <article class="rss-item">
-                  <h3><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h3>
-                  <p>${item.description.replace(/<\/?[^>]+(>|$)/g, "").slice(0, 200)}...</p>
-                  <p><small>${new Date(item.pubDate).toLocaleDateString()}</small></p>
-                </article>
-              `
-            )
-            .join("");
-        } catch (error) {
-          rssContainer.innerHTML = "<p>Could not load feed. LinkedIn may block RSS access without authentication.</p>";
-        }
-      }
-
-      fetchLinkedInRSS();
-    </script>
   </body>
 </html>
