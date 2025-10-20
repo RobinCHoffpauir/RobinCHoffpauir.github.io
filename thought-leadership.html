@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thought Leadership | Robin Hoffpauir</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .rss-feed {
+        display: grid;
+        gap: calc(var(--spacing-unit) * 3);
+        margin-top: calc(var(--spacing-unit) * 4);
+      }
+
+      .rss-item {
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-elevation-1);
+        padding: calc(var(--spacing-unit) * 3);
+        transition: transform var(--transition-speed);
+      }
+
+      .rss-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-elevation-2);
+      }
+
+      .rss-item h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      iframe {
+        border-radius: 12px;
+        box-shadow: var(--shadow-elevation-1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Toggle Theme</button>
+
+    <div class="container">
+      <header class="hero" role="banner">
+        <div class="hero-text">
+          <h1>Thought Leadership</h1>
+          <p class="eyebrow">Exploring Technology, Strategy, and Human Connection</p>
+          <p>Featuring my recent LinkedIn posts, podcast appearances, and original commentary on SaaS, AI, and geospatial innovation.</p>
+        </div>
+      </header>
+
+      <main>
+        <!-- LinkedIn Feed -->
+        <section aria-labelledby="linkedin-feed">
+          <h2 id="linkedin-feed">Recent LinkedIn Posts</h2>
+          <p>The latest discussions and posts from my professional network.</p>
+
+          <div id="linkedin-rss" class="rss-feed">
+            <p>Loading latest posts...</p>
+          </div>
+        </section>
+
+        <!-- Podcast Embeds -->
+        <section aria-labelledby="podcasts">
+          <h2 id="podcasts">Podcast Features</h2>
+          <p>Listen to my recent podcast appearances discussing GTM strategy and enablement frameworks.</p>
+
+          <div class="podcast-embeds">
+            <iframe
+              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+              frameborder="0"
+              height="175"
+              style="width: 100%; max-width: 660px; overflow: hidden;"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src="https://embed.podcasts.apple.com/us/podcast/training-that-sticks-with-robin-hoffpauir/id1811359309?i=1000730615659"
+              title="Training That Sticks podcast episode on Apple Podcasts">
+            </iframe>
+
+            <iframe
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/episode/4kKGvawZUtFSpjLTwGHFoE?utm_source=generator&amp;theme=0"
+              width="100%" height="352"
+              frameborder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Training That Sticks podcast episode on Spotify">
+            </iframe>
+          </div>
+        </section>
+
+        <div class="hero-actions">
+          <a class="btn" href="index.html">&larr; Back to Home</a>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Robin C. Hoffpauir. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="assets/js/theme.js"></script>
+
+    <!-- RSS Fetch Script -->
+    <script>
+      async function fetchLinkedInRSS() {
+        const rssContainer = document.getElementById("linkedin-rss");
+
+        // Example feed proxy (RSS to JSON)
+        const rssURL =
+          "https://api.rss2json.com/v1/api.json?rss_url=https://www.linkedin.com/feed/rss/"; 
+
+        try {
+          const response = await fetch(rssURL);
+          const data = await response.json();
+
+          if (!data.items || data.items.length === 0) {
+            rssContainer.innerHTML = "<p>No recent LinkedIn posts available.</p>";
+            return;
+          }
+
+          rssContainer.innerHTML = data.items
+            .slice(0, 5)
+            .map(
+              (item) => `
+                <article class="rss-item">
+                  <h3><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h3>
+                  <p>${item.description.replace(/<\/?[^>]+(>|$)/g, "").slice(0, 200)}...</p>
+                  <p><small>${new Date(item.pubDate).toLocaleDateString()}</small></p>
+                </article>
+              `
+            )
+            .join("");
+        } catch (error) {
+          rssContainer.innerHTML = "<p>Could not load feed. LinkedIn may block RSS access without authentication.</p>";
+        }
+      }
+
+      fetchLinkedInRSS();
+    </script>
+  </body>
+</html>
