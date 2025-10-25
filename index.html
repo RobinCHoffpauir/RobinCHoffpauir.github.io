@@ -118,6 +118,12 @@
         transition: transform 0.3s ease;
       }
 
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+
       /* ===============================
          Experience Card Headings
       =============================== */
@@ -203,9 +209,8 @@
         color: var(--muted);
       }
     </style>
-
-    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
+
   <body>
     <div class="container">
       <header class="hero" role="banner">
@@ -214,10 +219,9 @@
           <h1>Robin C. Hoffpauir</h1>
           <p>
             I bring more than eight years of value-driven SaaS sales experience,
-            pairing partner enablement with a relentless focus on customer
-            outcomes. From net-new acquisition to expansion and retention, I
-            guide teams through the full revenue lifecycle with clarity,
-            accountability, and trust.
+            pairing partner enablement with a relentless focus on customer outcomes.
+            From net-new acquisition to expansion and retention, I guide teams through
+            the full revenue lifecycle with clarity, accountability, and trust.
           </p>
           <div class="hero-actions">
             <a class="btn" href="assets/files/resume_2025.pdf" download>Download My Resume</a>
@@ -226,11 +230,14 @@
         </div>
         <figure class="hero-media">
           <img src="images/Otot_Logo.png" alt="Robin's logo of a palmtree-Fleur-de-lis" loading="lazy" />
-          <figcaption>Copyright © 2025 Robin C. Hoffpauir</figcaption>
+          <figcaption>© 2025 Robin C. Hoffpauir</figcaption>
         </figure>
       </header>
 
       <main>
+        <!-- ===============================
+             Experience Section
+        =============================== -->
         <section aria-labelledby="experience-title">
           <h2 id="experience-title">Professional Experience</h2>
 
@@ -287,6 +294,107 @@
               <li>Partnered with product and success teams to deliver bespoke solutions that solved complex customer challenges.</li>
             </ul>
           </article>
+        </section>
+
+        <!-- ===============================
+             Portfolio Grid Section
+        =============================== -->
+        <section aria-labelledby="portfolio-title">
+          <h2 id="portfolio-title">My Skills</h2>
+          <p class="section-intro">Each link below will bring you to its respective page with more details.</p>
+
+          <div class="media-grid">
+            <article class="media-card">
+              <a href="about.html">
+                <figure>
+                  <img src="images/turtleneck&jacket.jpg" alt="Robin C. Hoffpauir in a tailored jacket." loading="lazy" />
+                  <figcaption>Homepage Hero &amp; About Section</figcaption>
+                </figure>
+                <p>Polished professional presence and brand overview.</p>
+              </a>
+            </article>
+
+            <article class="media-card">
+              <a href="resume.html">
+                <figure>
+                  <img src="images/mirror_jacket_bgblur.jpg" alt="Robin C. Hoffpauir in a blazer." loading="lazy" />
+                  <figcaption>LinkedIn &amp; Résumé Header</figcaption>
+                </figure>
+                <p>Professional summary, experience, and achievements.</p>
+              </a>
+            </article>
+
+            <article class="media-card">
+              <a href="professional-history.html">
+                <figure>
+                  <img src="images/buttondown_mirror.jpg" alt="Robin C. Hoffpauir smart casual attire." loading="lazy" />
+                  <figcaption>Professional History</figcaption>
+                </figure>
+                <p>Career milestones and industry contributions.</p>
+              </a>
+            </article>
+
+            <article class="media-card">
+              <a href="testimonials.html">
+                <figure>
+                  <img src="images/outdoor_polo.jpg" alt="Robin outdoors in a polo." loading="lazy" />
+                  <figcaption>Client Testimonials</figcaption>
+                </figure>
+                <p>Testimonials and success stories.</p>
+              </a>
+            </article>
+
+            <article class="media-card">
+              <a href="data-visualizations.html">
+                <figure>
+                  <img src="images/greekkey_mandarincollar.jpg" alt="Robin smiling." loading="lazy" />
+                  <figcaption>Data &amp; Visualizations</figcaption>
+                </figure>
+                <p>Interactive charts and business insights.</p>
+              </a>
+            </article>
+
+            <article class="media-card">
+              <a href="thought-leadership.html">
+                <figure>
+                  <img src="images/pointing_conference.jpg" alt="Robin presenting during a conference." loading="lazy" />
+                  <figcaption>Thought Leadership</figcaption>
+                </figure>
+                <p>Articles and perspectives on SaaS innovation.</p>
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===============================
+             Podcast Section
+        =============================== -->
+        <section aria-labelledby="podcast-title" class="podcast-section">
+          <h2 id="podcast-title">Featured Podcast Interview</h2>
+          <p class="section-intro">Listen to my conversation on <em>Training That Works</em> to hear how I cultivate durable sales processes and winning GTM strategies.</p>
+          <div class="podcast-embeds">
+            <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width: 100%; max-width: 660px; overflow: hidden; border-radius: 10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/training-that-sticks-with-robin-hoffpauir/id1811359309?i=1000730615659" title="Training That Sticks podcast on Apple Podcasts"></iframe>
+
+            <iframe style="border-radius: 12px" src="https://open.spotify.com/embed/episode/4kKGvawZUtFSpjLTwGHFoE?utm_source=generator&amp;theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Training That Sticks podcast on Spotify"></iframe>
+          </div>
+        </section>
+
+        <!-- ===============================
+             Contact Section
+        =============================== -->
+        <section aria-labelledby="contact-title" class="cta-section">
+          <h2 id="contact-title">Let's Connect</h2>
+          <p>I’m always open to discussing SaaS go-to-market strategy, partnerships, and customer success initiatives.</p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:hoffpauirrobin@gmail.com">hoffpauirrobin@gmail.com</a>
+            • <strong>Phone:</strong>
+            <a href="tel:18502257539">850-225-7539</a>
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="assets/files/resume_2025.pdf" download>Download My Resume</a>
+            <a class="btn" href="https://linkedin.com/in/robinchoffpauir" target="_blank" rel="noopener noreferrer">Schedule a Conversation</a>
+          </div>
         </section>
 
         <footer>
