@@ -6,67 +6,84 @@
     <title>About | Robin Hoffpauir</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <style>
-      /* Page-specific enhancements while preserving shared styles */
-      .about-section {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 2rem 1.5rem;
-        line-height: 1.7;
-      }
-      h2 {
-        font-weight: 500;
-        font-size: 1.4rem;
-        margin-top: 2.5rem;
-        margin-bottom: 0.75rem;
-      }
-      p {
-        font-weight: 300;
-        margin-bottom: 1rem;
-      }
-      ul {
-        margin: 0.75rem 0 1.5rem 1.5rem;
-        font-weight: 300;
-      }
-      ul li {
-        margin-bottom: 0.5rem;
-      }
-      .btn {
-        display: inline-block;
-        margin-top: 2rem;
-      }
-      .photo-gallery {
-        display: grid;
-        place-items: center;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-      .photo-gallery img {
-        width: 100%;
-        max-width: 420px;
-        border-radius: 1rem;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-      .photo-gallery img:hover {
-        transform: scale(1.03);
-      }
-      .photo-gallery figcaption {
-        font-size: 0.9rem;
-        font-weight: 300;
-        margin-top: 0.5rem;
-        text-align: center;
-        color: var(--text-secondary);
-      }
-    </style>
+  :root {
+    --nav-height: 60px;
+    --nav-background: var(--color-surface, #ffffff);
+    --nav-border: var(--color-border, #dadce0);
+    --nav-shadow: var(--shadow-elevation-1, 0 1px 3px rgba(0,0,0,0.1));
+  }
+
+  [data-theme="dark"] {
+    --nav-background: var(--color-surface, #303134);
+    --nav-border: var(--color-border, #5f6368);
+  }
+
+  body {
+    /* Offset the body content so it sits below the fixed nav bar */
+    padding-top: var(--nav-height);
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background-color: var(--nav-background);
+    border-bottom: 1px solid var(--nav-border);
+    box-shadow: var(--nav-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+  }
+
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav li {
+    margin: 0 1rem;
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-on-surface-secondary);
+    transition: color 0.3s ease;
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active {
+    color: var(--color-primary);
+  }
+  
+  /* Responsive styles for small screens */
+  @media (max-width: 560px) {
+    .main-nav {
+      justify-content: space-around;
+    }
+    .main-nav li {
+      margin: 0 0.5rem;
+    }
+    .main-nav a {
+      font-size: 0.9rem;
+    }
+  }
+    </style>  
   </head>
 
   <body>
     <nav class="main-nav" role="navigation">
-      <ul>
+    <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="resume.html">Résumé</a></li>
-        d<li><a href="data-visualizations.html">Portfolio</a></li>
+        <li><a href="data-visualizations.html">Portfolio</a></li>
         <li><a href="thought-leadership.html">Writing</a></li>
         <li><a href="index.html#contact-title">Contact</a></li>
       </ul>
@@ -79,17 +96,26 @@
         <div class="hero-text">
           <h1>About Robin Hoffpauir</h1>
           <p class="eyebrow">Sales Director • Partnerships &amp; GTM Strategy • SaaS &amp; AI Platforms</p>
-          <p>I help organizations bridge the gap between innovation and measurable business value — building scalable go-to-market programs, strategic partnerships, and data-driven growth engines across the cloud and AI ecosystem.</p>
-        </div>
+          <p>
+            With over eight years leading SaaS go-to-market strategies, I specialize in building and scaling high-impact partnership ecosystems. My focus is on driving mutual growth through strategic alliances, co-selling motions, and partner enablement programs that deliver measurable revenue outcomes across Cloud and AI landscapes.
+          </p>
       </header>
 
       <main class="about-section">
+          <section id="photo-gallery">
+            <div class="photo-gallery">
+              <figure>
+                <img src="images/seniorday.png" alt="Robin Hoffpauir with family on Senior Day in baseball uniform" loading="lazy">
+                <figcaption>Senior Day — family, focus, and a reminder that every win is shared.</figcaption>
+              </figure>
+            </div>
+          </section>
+
         <section id="overview">
           <h2>Overview</h2>
           <p>With more than eight years in enterprise SaaS, cloud, and AI-driven data platforms, I’ve focused my career on transforming complex technologies into business outcomes that matter. I currently serve as <strong>Solution Sales Manager for Navagis</strong>, a Premier Google Maps Partner, leading go-to-market alignment with Google Cloud teams across North America.</p>
           <p>Before Navagis, I scaled channel and CSP growth at ISI Analytics — achieving 132% quota attainment across eight consecutive quarters. Earlier, I founded and exited <em>Parlayking LTD</em>, a SaaS analytics startup built on Bayesian models for predictive compensation analysis — a project that combined my love of data, problem-solving, and real-world application.</p>
         </section>
-
         <section id="philosophy">
           <h2>Approach &amp; Philosophy</h2>
           <p>Growth isn’t about chasing numbers — it’s about alignment. I focus on clarity, collaboration, and measurable outcomes that move the needle. My work blends analytical rigor with authentic relationships, building repeatable frameworks that scale across teams, partners, and customers. Whether I’m designing a co-sell motion with Google Cloud or guiding a client through AI adoption, I aim to create compounding impact.</p>
@@ -101,12 +127,6 @@
           <p>Outside of work, I’m fascinated by how data reveals patterns in performance. I spend time coding in <strong>Python</strong> — building models and visualizations for <strong>sports analytics</strong> and betting strategy. It’s part curiosity, part creative outlet — and all about learning how systems behave under pressure.</p>
           <p>When I’m not working or tinkering with code, I’m probably <strong>golfing, fishing along the Gulf Coast, or hanging out with my dog</strong>. Those moments keep me grounded and remind me that balance is a form of strategy, too.</p>
 
-          <div class="photo-gallery">
-            <figure>
-              <img src="images/seniorday.png" alt="Robin Hoffpauir with family on Senior Day in baseball uniform" loading="lazy">
-              <figcaption>Senior Day — family, focus, and a reminder that every win is shared.</figcaption>
-            </figure>
-          </div>
         </section>
 
         <section id="focus">
