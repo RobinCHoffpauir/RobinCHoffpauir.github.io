@@ -5,34 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Robin Hoffpauir</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      /* Page-specific enhancements while preserving shared styles */
+      .about-section {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        line-height: 1.7;
+      }
+      h2 {
+        font-weight: 500;
+        font-size: 1.4rem;
+        margin-top: 2.5rem;
+        margin-bottom: 0.75rem;
+      }
+      p {
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+      ul {
+        margin: 0.75rem 0 1.5rem 1.5rem;
+        font-weight: 300;
+      }
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 2rem;
+      }
+      .photo-gallery {
+        display: grid;
+        place-items: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      .photo-gallery img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 1rem;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .photo-gallery img:hover {
+        transform: scale(1.03);
+      }
+      .photo-gallery figcaption {
+        font-size: 0.9rem;
+        font-weight: 300;
+        margin-top: 0.5rem;
+        text-align: center;
+        color: var(--text-secondary);
+      }
+    </style>
   </head>
 
   <body>
     <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Toggle Theme</button>
 
-    <div class="container">
+    <div class="container fade-in">
       <header class="hero" role="banner">
         <div class="hero-text">
           <h1>About Robin Hoffpauir</h1>
-          <p class="eyebrow">SaaS Sales Professional &amp; Innovation Strategist</p>
-          <p>I help organizations translate technology into measurable business value through data-driven sales strategy, partnership development, and customer-centric execution.</p>
+          <p class="eyebrow">Sales Director • Partnerships &amp; GTM Strategy • SaaS &amp; AI Platforms</p>
+          <p>I help organizations bridge the gap between innovation and measurable business value — building scalable go-to-market programs, strategic partnerships, and data-driven growth engines across the cloud and AI ecosystem.</p>
         </div>
       </header>
 
-      <main>
-        <section aria-labelledby="overview-title">
-          <h2 id="overview-title">Overview</h2>
-          <p>With a background spanning SaaS, APIs, and cloud ecosystems, I focus on aligning go-to-market motions with strategic outcomes. I currently serve as the North America Solution Sales Manager for Navagis, a Google Premier Partner specializing in geospatial and cloud solutions.</p>
-          <p>My approach blends analytical rigor with human connection — building trust, uncovering needs, and enabling partners to scale through repeatable frameworks. Whether it’s enabling Google Cloud field reps or guiding customers through complex integrations, I stay focused on one thing: impact that lasts.</p>
+      <main class="about-section">
+        <section id="overview">
+          <h2>Overview</h2>
+          <p>With more than eight years in enterprise SaaS, cloud, and AI-driven data platforms, I’ve focused my career on transforming complex technologies into business outcomes that matter. I currently serve as <strong>Solution Sales Manager for Navagis</strong>, a Premier Google Maps Partner, leading go-to-market alignment with Google Cloud teams across North America.</p>
+          <p>Before Navagis, I scaled channel and CSP growth at ISI Analytics — achieving 132% quota attainment across eight consecutive quarters. Earlier, I founded and exited <em>Parlayking LTD</em>, a SaaS analytics startup built on Bayesian models for predictive compensation analysis — a project that combined my love of data, problem-solving, and real-world application.</p>
+        </section>
+
+        <section id="philosophy">
+          <h2>Approach &amp; Philosophy</h2>
+          <p>Growth isn’t about chasing numbers — it’s about alignment. I focus on clarity, collaboration, and measurable outcomes that move the needle. My work blends analytical rigor with authentic relationships, building repeatable frameworks that scale across teams, partners, and customers. Whether I’m designing a co-sell motion with Google Cloud or guiding a client through AI adoption, I aim to create compounding impact.</p>
+        </section>
+
+        <section id="personal">
+          <h2>Beyond Work</h2>
+          <p>Before business, there was baseball. I played collegiate ball after an <strong>All-State high school career</strong> — years that taught me discipline, grit, and the power of repetition. That athlete’s mindset still drives how I think and lead today.</p>
+          <p>Outside of work, I’m fascinated by how data reveals patterns in performance. I spend time coding in <strong>Python</strong> — building models and visualizations for <strong>sports analytics</strong> and betting strategy. It’s part curiosity, part creative outlet — and all about learning how systems behave under pressure.</p>
+          <p>When I’m not working or tinkering with code, I’m probably <strong>golfing, fishing along the Gulf Coast, or hanging out with my dog</strong>. Those moments keep me grounded and remind me that balance is a form of strategy, too.</p>
+
+          <div class="photo-gallery">
+            <figure>
+              <img src="images/seniorday.png" alt="Robin Hoffpauir with family on Senior Day in baseball uniform" loading="lazy">
+              <figcaption>Senior Day — family, focus, and a reminder that every win is shared.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="focus">
+          <h2>Currently Focused On</h2>
+          <ul>
+            <li>Expanding Google Cloud &amp; Maps ecosystem growth through partner innovation</li>
+            <li>Designing AI-driven enablement frameworks that align sales, product, and marketing teams</li>
+            <li>Developing data visualization dashboards for analytics-driven storytelling</li>
+            <li>Exploring intersections of geospatial, sports, and predictive analytics</li>
+          </ul>
         </section>
 
         <div class="hero-actions">
-          <a class="btn" href="index.html">&larr; Back to Home</a>
+          <a class="btn" href="index.html">&larr;&nbsp;Back to Home</a>
         </div>
       </main>
 
       <footer>
-        <p>&copy; 2025 Robin C. Hoffpauir. All rights reserved.</p>
+        <p>&copy;&nbsp;2025 Robin C.&nbsp;Hoffpauir.&nbsp;All rights reserved.</p>
       </footer>
     </div>
 
