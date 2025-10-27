@@ -425,3 +425,37 @@ footer {
     height: auto;
   }
 }
+/* --- About Page Custom Styles --- */
+.about-section {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.7;
+}
+
+.photo-gallery {
+  display: grid;
+  place-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.photo-gallery img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.03);
+}
+
+.photo-gallery figcaption {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
