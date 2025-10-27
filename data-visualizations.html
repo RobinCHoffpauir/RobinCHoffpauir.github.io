@@ -8,12 +8,19 @@
   </head>
 
   <body>
-    <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Toggle Theme</button>
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Toggle color theme"
+      aria-pressed="false"
+    >
+      Toggle Theme
+    </button>
 
     <div class="container">
       <header class="hero" role="banner">
         <div class="hero-text">
-          <h1>Data & Visualizations</h1>
+          <h1>Data &amp; Visualizations</h1>
           <p class="eyebrow">Turning Insight into Action</p>
         </div>
       </header>
@@ -21,18 +28,35 @@
       <main>
         <section aria-labelledby="data-intro">
           <h2 id="data-intro">Analytics Work Samples</h2>
-          <p>Below are examples of dashboards and performance visualizations that highlight my data-driven approach to revenue optimization and operational efficiency.</p>
+          <p>
+            Below are examples of dashboards and performance visualizations that
+            highlight my data-driven approach to revenue optimization and
+            operational efficiency.
+          </p>
 
           <ul>
-            <li><strong>NavFleet Efficiency Dashboard:</strong> Real-time routing KPIs measuring utilization and carbon reduction.</li>
-            <li><strong>Sales Pipeline Optimization:</strong> Zoho CRM → Sheets automation tracking win rates and stage velocity.</li>
-            <li><strong>Golf Performance Tracker:</strong> Python-based analytics tool using Rapsodo launch data for dispersion analysis.</li>
+            <li>
+              <strong>NavFleet Efficiency Dashboard:</strong> Real-time routing
+              KPIs measuring utilization and carbon reduction.
+            </li>
+            <li>
+              <strong>Sales Pipeline Optimization:</strong> Zoho CRM → Sheets
+              automation tracking win rates and stage velocity.
+            </li>
+            <li>
+              <strong>Golf Performance Tracker:</strong> Python-based analytics
+              tool using Rapsodo launch data for dispersion analysis.
+            </li>
           </ul>
         </section>
 
         <section aria-labelledby="quota-chart">
           <h2 id="quota-chart">Monthly Quota vs. Total Sales Attainment</h2>
-          <p>This visualization demonstrates month-over-month quota performance compared to total sales, showcasing consistency and growth over time.</p>
+          <p>
+            This visualization demonstrates month-over-month quota performance
+            compared to total sales, showcasing consistency and growth over
+            time.
+          </p>
 
           <figure>
             <img
@@ -41,11 +65,74 @@
               loading="lazy"
               style="border-radius:12px; box-shadow:var(--shadow-elevation-2); max-width:100%; height:auto; margin-top:16px;"
             />
-            <figcaption style="margin-top:8px; color:var(--color-on-surface-secondary); font-size:0.9rem;">
-              Monthly performance visualization — generated and tracked through internal analytics tools.
+            <figcaption
+              style="margin-top:8px; color:var(--color-on-surface-secondary); font-size:0.9rem;"
+            >
+              Monthly performance visualization — generated and tracked through
+              internal analytics tools.
             </figcaption>
           </figure>
         </section>
+
+        <!-- --- Baseball Data Analytics Section --- -->
+        <section id="sabermetrics">
+          <h2>Advanced Sabermetrics &amp; Statcast Analysis</h2>
+          <p>
+            Beyond business metrics, I explore data through my lifelong
+            connection to baseball. Using Statcast data and Python-based
+            visualization tools, I analyze how launch angle, exit velocity, and
+            contact quality correlate with on-field outcomes — applying the same
+            principles of analytics, iteration, and optimization that drive my
+            professional work.
+          </p>
+
+          <div class="photo-gallery">
+            <figure>
+              <img
+                src="images/hit_distance_using_launchspeed.png"
+                alt="Hit distance versus launch speed plot"
+                loading="lazy"
+              />
+              <figcaption>
+                Hit Distance vs. Launch Speed — showing how exit velocity
+                directly impacts flight distance.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/est_ba_using_speedangle.png"
+                alt="Estimated batting average using launch speed and angle"
+                loading="lazy"
+              />
+              <figcaption>
+                Estimated Batting Average by Launch Speed &amp; Angle —
+                visualizing optimized contact zones for hitters.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/launch_speed_angle.png"
+                alt="Launch speed and angle density plot"
+                loading="lazy"
+              />
+              <figcaption>
+                Launch Speed &amp; Angle Distribution — identifying
+                power/contact tradeoffs across player profiles.
+              </figcaption>
+            </figure>
+          </div>
+
+          <p>
+            These models were built in Python using
+            <strong>Pandas</strong>, <strong>Matplotlib</strong>, and
+            <strong>Statcast datasets</strong>, emphasizing how small
+            adjustments in mechanics produce measurable differences in outcomes
+            — a principle that applies equally in sales, sports, and strategy.
+          </p>
+        </section>
+        <!-- --- End Baseball Data Analytics Section --- -->
 
         <div class="hero-actions">
           <a class="btn" href="index.html">&larr; Back to Home</a>
