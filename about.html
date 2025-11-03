@@ -73,8 +73,36 @@
     .main-nav a {
       font-size: 0.9rem;
     }
+    .cloud-logo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+     }
+    .cloud-logo-row img {
+        max-height: 70px;
+        width: auto;
+        background-color: var(--color-surface, #fff);  /* light panel */
+        padding: 8px 12px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+      [data-theme="dark"] .cloud-logo-row img {
+        background-color: #1f1f1f;  /* darker panel for dark theme */
+      }
+    .cloud-logo-row img:hover {
+      transform: scale(1.05);
+      background-color: rgba(255,255,255,0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
   }
-    </style>  
+  </style>  
   </head>
 
   <body>
@@ -137,6 +165,17 @@
             <li>Developing data visualization dashboards for analytics-driven storytelling</li>
             <li>Exploring intersections of geospatial, sports, and predictive analytics</li>
           </ul>
+        </section>
+        <section id="cloud-partners">
+         <h2>Cloud Ecosystem Expertise</h2>
+         <p>
+         Deep alignment across leading hyperscaler ecosystems — partnering with cloud field, marketing, and solution engineering teams to drive joint go-to-market outcomes.
+         </p>
+          <div class="cloud-logo-row">
+            <img src="images/logos/GCP.png" alt="Google Cloud logo" />
+            <img src="images/logos/AWS.jpg" alt="Amazon Web Services logo" />
+            <img src="images/logos/AzureLogo.png" alt="Microsoft Azure logo" />
+          </div>
         </section>
 
         <div class="hero-actions">
