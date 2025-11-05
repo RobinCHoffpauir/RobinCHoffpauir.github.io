@@ -74,6 +74,15 @@
     .main-nav a {
       font-size: 0.9rem;
     }
+    #partnerships-analytics .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    #partnerships-analytics figure {
+      margin: 0;
+    }
   }
     </style>
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -155,6 +164,84 @@
             </figcaption>
           </figure>
         </section>
+        <!-- === Partnerships & GTM Analytics Section === -->
+        <section id="partnerships-analytics">
+          <h2>Partnerships & GTM Analytics</h2>
+          <p>
+            Visual summaries of how strategic alliances, hyperscaler collaboration, and
+            co-sell programs have driven measurable growth and partner impact across
+            ecosystems.
+          </p>
+
+          <div class="photo-gallery">
+            <figure>
+              <img
+                src="images/plots/Funnel_CoSell_Pipeline.png"
+                alt="Funnel chart showing partner-sourced, co-sell, and closed-won pipeline values."
+                loading="lazy"
+                style="border-radius:12px; box-shadow:var(--shadow-elevation-2); max-width:100%; height:auto;"
+              />
+              <figcaption>
+                <strong>Co-Sell Pipeline Funnel:</strong> Depicts the progression of partner-sourced
+                opportunities through co-sell and expansion stages.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/plots/Matrix_Hyperscaler_Engagement.png"
+                alt="Heatmap showing engagement maturity across hyperscaler partnership pillars."
+                loading="lazy"
+                style="border-radius:12px; box-shadow:var(--shadow-elevation-2); max-width:100%; height:auto;"
+              />
+              <figcaption>
+                <strong>Hyperscaler Engagement Matrix:</strong> Measures collaboration strength across
+                co-marketing, funding, technical alignment, and marketplace presence for Google Cloud,
+                AWS, and Azure.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/plots/Revenue_Attribution.png"
+                alt="Stacked bar chart showing direct, partner-influenced, and partner-sourced revenue."
+                loading="lazy"
+                style="border-radius:12px; box-shadow:var(--shadow-elevation-2); max-width:100%; height:auto;"
+              />
+              <figcaption>
+                <strong>Revenue Attribution Breakdown:</strong> Demonstrates the increasing contribution
+                of partner-sourced and influenced revenue year-over-year.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/plots/Partner_Lifecycle_Velocity.png"
+                alt="Line chart showing reduced time to partner activation and first deal."
+                loading="lazy"
+                style="border-radius:12px; box-shadow:var(--shadow-elevation-2); max-width:100%; height:auto;"
+              />
+              <figcaption>
+                <strong>Partner Lifecycle Velocity:</strong> Reflects a steady reduction in average
+                time-to-first-deal through improved enablement and onboarding.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/plots/CoMarketing_ROI.png"
+                alt="Bar chart showing MDF investment and pipeline generation."
+                loading="lazy"
+                style="border-radius:12px; box-shadow:var(--shadow-elevation-2); max-width:100%; height:auto;"
+              />
+              <figcaption>
+                <strong>Co-Marketing ROI Overview:</strong> Visualizes the ROI achieved from hyperscaler MDF
+                programs, translating $1M invested into $3.8M pipeline impact.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+        <!-- === End Partnerships & GTM Analytics Section === -->
 
         <!-- --- Baseball Data Analytics Section --- -->
         <section id="sabermetrics">
