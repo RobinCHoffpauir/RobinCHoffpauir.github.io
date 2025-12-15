@@ -3,60 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Robin Hoffpauir | SaaS & GTM Leader | Partnerships • Cloud • AI</title>
+    <title>Robin Hoffpauir | Revenue Leader | SaaS • Platforms • GTM</title>
 
+    <!-- Global styles handle ALL color + theme logic -->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <style>
-      :root {
-        --nav-height: 60px;
-        --nav-background: var(--color-surface, #ffffff);
-        --nav-border: var(--color-border, #dadce0);
-        --nav-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      }
+      /* Layout-only overrides. No colors. No theme tokens. */
 
       body {
         padding-top: var(--nav-height);
       }
-
-      .main-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: var(--nav-height);
-        background-color: var(--nav-background);
-        border-bottom: 1px solid var(--nav-border);
-        box-shadow: var(--nav-shadow);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-      }
-
-      .main-nav ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .main-nav li {
-        margin: 0 1rem;
-      }
-
-      .main-nav a {
-        text-decoration: none;
-        font-weight: 500;
-        color: var(--color-on-surface-secondary);
-      }
-
-      .main-nav a.active,
-      .main-nav a:hover {
-        color: var(--color-primary);
-      }
-
-      /* ---------- MEDIA CARD ENHANCEMENTS ---------- */
 
       .media-grid {
         display: grid;
@@ -67,11 +24,9 @@
       .media-card {
         position: relative;
         overflow: visible;
-        background: var(--color-surface);
-        border: 1px solid var(--color-border);
+        padding: calc(var(--spacing-unit) * 2.5);
         border-radius: var(--border-radius);
         box-shadow: var(--shadow-elevation-1);
-        padding: calc(var(--spacing-unit) * 2.5);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
@@ -87,8 +42,7 @@
 
       .media-card figure {
         margin: 0;
-        position: relative;
-        z-index: 2;
+        text-align: center;
       }
 
       .media-card img {
@@ -98,52 +52,38 @@
         margin: 0 auto 0.75rem;
         object-fit: cover;
         object-position: top center;
-        transform: translateY(-14px);
+        transform: translateY(-12px);
         border-radius: 16px;
-        background: var(--color-surface);
-        box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+        box-shadow: var(--shadow-elevation-2);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
       .media-card:hover img {
-        transform: translateY(-20px);
-        box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+        transform: translateY(-18px);
       }
 
       .media-card figcaption {
-        text-align: center;
         font-weight: 600;
         margin-bottom: 0.25rem;
       }
 
       .media-card p {
-        text-align: center;
         font-size: 0.95rem;
         margin: 0;
+        text-align: center;
       }
 
       @media (max-width: 560px) {
-        .main-nav {
-          justify-content: space-around;
-        }
-
-        .main-nav li {
-          margin: 0 0.5rem;
-        }
-
-        .main-nav a {
-          font-size: 0.9rem;
-        }
-
         .media-card img {
           width: 100px;
-          transform: translateY(-10px);
+          transform: translateY(-8px);
         }
       }
     </style>
   </head>
 
   <body>
+    <!-- NAV (single source of truth) -->
     <nav class="main-nav">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -155,63 +95,100 @@
       </ul>
     </nav>
 
-    <div class="container">
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Toggle color theme"
+      aria-pressed="false">
+      Toggle Theme
+    </button>
+
+    <div class="container fade-in">
+      <!-- HERO -->
       <header class="hero">
         <div class="hero-text">
-          <p class="eyebrow">SaaS & GTM Leader | Partnerships • Cloud • AI</p>
+          <p class="eyebrow">
+            Revenue Leader for API & Enterprise Platforms
+          </p>
           <h1>Robin C. Hoffpauir</h1>
           <p>
-            I build and scale revenue engines across SaaS, cloud, and platform ecosystems.
-            My focus is disciplined GTM execution, partner leverage, and predictable growth.
+            I build predictable revenue engines for usage-based SaaS and platform businesses.
+            My focus is disciplined GTM execution, partner leverage, and forecastable growth
+            in complex enterprise environments.
           </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="resume.html">View Résumé</a>
+            <a class="btn" href="about.html">About Me</a>
+          </div>
         </div>
       </header>
 
+      <!-- PORTAL CARDS -->
       <main>
-        <section id="portfolio">
+        <section>
           <h2>Explore My Work</h2>
-          <p class="section-intro">Each link below leads to a deeper view.</p>
+          <p class="section-intro">
+            Each section reflects how I think about revenue, systems, and execution.
+          </p>
 
           <div class="media-grid">
             <article class="media-card">
               <a href="about.html">
                 <figure>
-                  <img src="images/Cartoon/Cartoon3piece.png" alt="Cartoon formal portrait" />
-                  <figcaption>About Me</figcaption>
+                  <img src="images/Cartoon/Cartoon3piece.png" alt="About Robin" />
+                  <figcaption>About</figcaption>
                 </figure>
-                <p>Professional overview and leadership story.</p>
+                <p>Leadership philosophy and operating model.</p>
               </a>
             </article>
 
             <article class="media-card">
               <a href="resume.html">
                 <figure>
-                  <img src="images/Cartoon/CartoonDesk.png" alt="Cartoon working at desk" />
+                  <img src="images/Cartoon/CartoonDesk.png" alt="Resume" />
                   <figcaption>Résumé</figcaption>
                 </figure>
-                <p>Experience, outcomes, and execution.</p>
+                <p>Experience, outcomes, and scope.</p>
               </a>
             </article>
 
             <article class="media-card">
               <a href="data-visualizations.html">
                 <figure>
-                  <img src="images/Cartoon/CartoonTabletSales.png" alt="Cartoon presenting data" />
-                  <figcaption>Portfolio</figcaption>
+                  <img src="images/Cartoon/CartoonTabletSales.png" alt="Data visualizations" />
+                  <figcaption>Data & Visuals</figcaption>
                 </figure>
-                <p>Data, systems, and GTM storytelling.</p>
+                <p>How I forecast and run revenue.</p>
               </a>
             </article>
 
             <article class="media-card">
               <a href="thought-leadership.html">
                 <figure>
-                  <img src="images/Cartoon/CartoonBizCasualPointing.png" alt="Cartoon thought leader" />
+                  <img src="images/Cartoon/CartoonBizCasualPointing.png" alt="Writing" />
                   <figcaption>Writing</figcaption>
                 </figure>
-                <p>Perspectives on sales and platforms.</p>
+                <p>Thoughts on sales, platforms, and GTM.</p>
               </a>
             </article>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+          <h2 id="contact-title">Let’s Connect</h2>
+          <p>
+            Open to conversations around sales leadership, platform GTM, and usage-based growth.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:hoffpauirrobin@gmail.com">
+              Email Me
+            </a>
+            <a class="btn" href="https://linkedin.com/in/robinchoffpauir" target="_blank">
+              LinkedIn
+            </a>
           </div>
         </section>
       </main>
