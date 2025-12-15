@@ -4,22 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Robin Hoffpauir</title>
+
     <link rel="stylesheet" href="assets/css/styles.css" />
+
     <style>
       :root {
         --nav-height: 60px;
         --nav-background: var(--color-surface, #ffffff);
         --nav-border: var(--color-border, #dadce0);
-        --nav-shadow: var(--shadow-elevation-1, 0 1px 3px rgba(0,0,0,0.1));
-      }
-
-      [data-theme="dark"] {
-        --nav-background: var(--color-surface, #303134);
-        --nav-border: var(--color-border, #5f6368);
+        --nav-shadow: 0 1px 3px rgba(0,0,0,0.1);
       }
 
       body {
-        /* Offset the body content so it sits below the fixed nav bar */
         padding-top: var(--nav-height);
       }
 
@@ -36,7 +32,6 @@
         align-items: center;
         justify-content: center;
         z-index: 1000;
-        transition: background-color var(--transition-speed), border-color var(--transition-speed);
       }
 
       .main-nav ul {
@@ -54,31 +49,43 @@
         text-decoration: none;
         font-weight: 500;
         color: var(--color-on-surface-secondary);
-        transition: color 0.3s ease;
       }
 
-      .main-nav a:hover,
-      .main-nav a.active {
+      .main-nav a.active,
+      .main-nav a:hover {
         color: var(--color-primary);
       }
 
-      /* Responsive styles for small screens */
-      @media (max-width: 560px) {
-        .main-nav {
-          justify-content: space-around;
+      .about-hero {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: calc(var(--spacing-unit) * 4);
+        align-items: center;
+        margin-bottom: calc(var(--spacing-unit) * 6);
+      }
+
+      .about-hero img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: var(--shadow-elevation-2);
+      }
+
+      @media (max-width: 800px) {
+        .about-hero {
+          grid-template-columns: 1fr;
+          text-align: center;
         }
-        .main-nav li {
-          margin: 0 0.5rem;
-        }
-        .main-nav a {
-          font-size: 0.9rem;
+
+        .about-hero img {
+          max-width: 260px;
+          margin: 0 auto;
         }
       }
     </style>
   </head>
 
   <body>
-    <nav class="main-nav" role="navigation">
+    <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
@@ -89,120 +96,113 @@
       </ul>
     </nav>
 
-    <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Toggle Theme</button>
+    <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+      Toggle Theme
+    </button>
 
     <div class="container fade-in">
-      <header class="hero" role="banner">
-        <div class="hero-text">
-          <h1>About Robin Hoffpauir</h1>
-          <p class="eyebrow">Revenue Leader for API and Enterprise Platforms • GTM, Partnerships, Forecasting, Team Execution</p>
-          <p>
-            I build predictable revenue engines for usage-driven platforms.
-            That means turning technical products into clear commercial motions, tightening pipeline discipline,
-            improving forecast accuracy, and scaling teams that win consistently in competitive enterprise cycles.
-          </p>
-          <p>
-            Today I operate in the geospatial and cloud ecosystem, leading go-to-market alignment, co-sell strategy,
-            and expansion plays across complex stakeholder maps.
-          </p>
-        </div>
-      </header>
-
       <main class="about-section">
-        <section id="photo-gallery">
-          <div class="photo-gallery">
-            <figure>
-              <img src="images/Cartoon/CartoonRelaxedSuit.png" alt="Cartoon portrait in a relaxed suit with arms crossed" loading="lazy" />
-              <figcaption>Operator mindset, relationship-first, execution obsessed.</figcaption>
-            </figure>
+        <!-- SINGLE HERO INTRO -->
+        <section class="about-hero">
+          <div>
+            <h1>Robin Hoffpauir</h1>
+            <p class="eyebrow">
+              Revenue Leader for API and Enterprise Platforms
+            </p>
+            <p>
+              I build predictable revenue engines for usage-driven platforms.
+              My work focuses on turning technically complex products into clear commercial motions,
+              tightening pipeline discipline, improving forecast accuracy, and scaling teams that execute
+              consistently in enterprise environments.
+            </p>
+            <p>
+              I operate at the intersection of sales, partners, and product,
+              most recently in the geospatial and cloud ecosystem where usage economics,
+              co-sell motion, and expansion strategy matter more than logos.
+            </p>
           </div>
+
+          <figure>
+            <img
+              src="images/Cartoon/CartoonRelaxedSuit.png"
+              alt="Cartoon portrait of Robin Hoffpauir in a relaxed suit"
+              loading="lazy"
+            />
+          </figure>
         </section>
 
-        <section id="overview">
-          <h2>Overview</h2>
+        <!-- EXPERIENCE AND CREDIBILITY -->
+        <section>
+          <h2>Experience and Scope</h2>
           <p>
-            I am a sales leader with 8+ years across enterprise SaaS, cloud, and data platforms. My lane is owning growth by building repeatable motions:
-            clear ICP and positioning, partner leverage, multi-threaded enterprise sales cycles, and operational cadence that keeps deals real and forecasts honest.
+            I currently serve as Solutions Sales Manager at Navagis,
+            a Premier Google Maps Platform partner, where I lead go-to-market alignment
+            with Google Cloud and Maps field teams across North America.
+            The work centers on platform adoption, expansion, and partner-led growth
+            in usage-based revenue models.
           </p>
           <p>
-            I currently serve as <strong>Solutions Sales Manager at Navagis</strong>, a Premier Google Maps Platform partner, where I lead go-to-market alignment with Google Cloud teams across North America.
-            The work lives at the intersection of platform adoption and expansion, partner co-selling, and the operational reality of usage-based economics.
-          </p>
-          <p>
-            Before Navagis, I scaled channel and CSP growth at ISI Analytics, delivering <strong>132% quota attainment across eight consecutive quarters</strong>.
-            Earlier, I founded and exited <em>Parlayking LTD</em>, a SaaS analytics startup built on Bayesian models for predictive compensation analysis.
-            That experience made me fluent in translating messy data into decisions a team can execute.
-          </p>
-        </section>
-
-        <section id="philosophy">
-          <h2>Approach &amp; Philosophy</h2>
-          <p>
-            My operating model is simple: align, diagnose, implement, execute.
-            Alignment means shared definitions (ICP, stages, exit criteria, and what "qualified" actually means).
-            Diagnosis means looking at data and deal reality, not vibes.
-            Implementation is building the system (cadence, plays, enablement, partner motion).
-            Execution is coaching and inspection, with the same standards every week.
-          </p>
-          <p>
-            I love the art of relationships, but I respect the math.
-            The goal is a team that can explain why revenue will happen, not just hope it does.
-            When the process is tight, creativity becomes a multiplier instead of a fire drill.
+            Prior to Navagis, I scaled channel and CSP growth at ISI Analytics,
+            delivering 132 percent quota attainment across eight consecutive quarters.
+            Earlier in my career, I founded and exited Parlayking LTD,
+            a SaaS analytics company built on predictive modeling.
+            That experience shaped how I translate messy data into decisions teams can execute.
           </p>
         </section>
 
-        <section id="leadership">
+        <!-- OPERATING PHILOSOPHY -->
+        <section>
+          <h2>Operating Philosophy</h2>
+          <p>
+            My operating model is align, diagnose, implement, execute.
+            Alignment creates shared definitions.
+            Diagnosis focuses on data and deal reality.
+            Implementation builds the system.
+            Execution enforces standards through cadence and coaching.
+          </p>
+          <p>
+            Relationships matter, but math wins.
+            A strong sales organization can explain why revenue will happen,
+            not just hope that it does.
+          </p>
+        </section>
+
+        <!-- LEADERSHIP -->
+        <section>
           <h2>Leadership Style</h2>
           <p>
-            I am a player-coach who runs toward clarity and accountability.
-            I coach to behaviors (discovery quality, multi-threading, next steps, mutual plans), not just outcomes.
-            I build a culture where the scoreboard matters, and so does how we get there.
+            I operate as a player-coach with high standards and low ego.
+            I coach behaviors before outcomes and build cultures
+            where accountability and trust coexist.
           </p>
           <p>
-            I operate cross-functionally by default. Strong sales leadership is equal parts customer insight, product feedback loop, partner coordination,
-            and RevOps discipline. If any one of those breaks, the forecast becomes fantasy.
+            Strong sales leadership requires cross-functional fluency.
+            Sales, product, partners, and RevOps must move together
+            or the forecast becomes fiction.
           </p>
         </section>
 
-        <section id="mapbox-fit">
-          <h2>Why I Fit a Head of Sales Role (Mapbox-style)</h2>
-          <ul>
-            <li><strong>Usage-based revenue fluency:</strong> I think in adoption, expansion, and retention, then map that to pipeline and forecast rigor.</li>
-            <li><strong>Partner leverage:</strong> I build co-sell motions that are operational, measurable, and repeatable, not just "relationships".</li>
-            <li><strong>Enterprise execution:</strong> I run multi-threaded cycles with mutual plans, crisp next steps, and tight qualification.</li>
-            <li><strong>Systems builder:</strong> I install cadence, stage definitions, enablement, and inspection that makes performance predictable.</li>
-          </ul>
-        </section>
-
-        <section id="personal">
+        <!-- PERSONAL -->
+        <section>
           <h2>Beyond Work</h2>
           <p>
-            Before business, there was baseball. I played collegiate ball after an <strong>All-State high school career</strong>.
-            It taught me discipline, repetition, and how to perform when it is uncomfortable.
+            Before business, there was baseball.
+            I played collegiate ball after an All-State high school career,
+            which shaped my discipline, preparation, and competitive mindset.
           </p>
           <p>
-            Outside of work, I build in <strong>Python</strong> and obsess over performance systems, especially sports analytics and forecasting.
-            When I am not working or coding, I am probably <strong>golfing, fishing along the Gulf Coast, or hanging out with my dog</strong>.
+            Outside of work, I build in Python, analyze performance systems,
+            golf whenever possible, and spend time on the Gulf Coast.
           </p>
-        </section>
-
-        <section id="focus">
-          <h2>Currently Focused On</h2>
-          <ul>
-            <li>Building repeatable GTM plays for platform adoption and expansion</li>
-            <li>Improving forecast accuracy through tighter qualification and stage exit criteria</li>
-            <li>Scaling partner co-sell motions that produce measurable pipeline and revenue</li>
-            <li>Using data visualization to tell clear commercial stories</li>
-          </ul>
         </section>
 
         <div class="hero-actions">
-          <a class="btn" href="index.html">&larr;&nbsp;Back to Home</a>
+          <a class="btn" href="index.html">Back to Home</a>
         </div>
       </main>
 
       <footer>
-        <p>&copy;&nbsp;2025 Robin C.&nbsp;Hoffpauir.&nbsp;All rights reserved.</p>
+        <p>© 2025 Robin C. Hoffpauir. All rights reserved.</p>
       </footer>
     </div>
 
