@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Robin Hoffpauir | SaaS & GTM Leader | Partnerships • Cloud • AI</title>
-    
+
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <style>
@@ -12,21 +12,11 @@
         --nav-height: 60px;
         --nav-background: var(--color-surface, #ffffff);
         --nav-border: var(--color-border, #dadce0);
-        --nav-shadow: var(--shadow-elevation-1, 0 1px 3px rgba(0,0,0,0.1));
-      }
-
-      [data-theme="dark"] {
-        --nav-background: var(--color-surface, #303134);
-        --nav-border: var(--color-border, #5f6368);
+        --nav-shadow: 0 1px 3px rgba(0,0,0,0.1);
       }
 
       body {
         padding-top: var(--nav-height);
-      }
-      
-      .media-card img {
-        object-fit: cover;
-        object-position: top center;
       }
 
       .main-nav {
@@ -42,7 +32,6 @@
         align-items: center;
         justify-content: center;
         z-index: 1000;
-        transition: background-color var(--transition-speed), border-color var(--transition-speed);
       }
 
       .main-nav ul {
@@ -60,88 +49,102 @@
         text-decoration: none;
         font-weight: 500;
         color: var(--color-on-surface-secondary);
-        transition: color 0.3s ease;
       }
 
-      .main-nav a:hover,
-      .main-nav a.active {
+      .main-nav a.active,
+      .main-nav a:hover {
         color: var(--color-primary);
       }
-      
-      .media-container {
-        display: flex;
-        flex-wrap: wrap; 
-        gap: calc(var(--spacing-unit) * 4); 
-        margin-top: calc(var(--spacing-unit) * 4);
-      }
 
-      .media-container > section {
-        flex: 1; 
-        min-width: 300px; 
-      }
-      
-      .rss-feed {
+      /* ---------- MEDIA CARD ENHANCEMENTS ---------- */
+
+      .media-grid {
         display: grid;
-        gap: calc(var(--spacing-unit) * 2); 
-        margin-top: calc(var(--spacing-unit) * 2);
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: calc(var(--spacing-unit) * 3);
       }
 
-      .rss-item {
-        background-color: var(--color-surface);
+      .media-card {
+        position: relative;
+        overflow: visible;
+        background: var(--color-surface);
         border: 1px solid var(--color-border);
         border-radius: var(--border-radius);
         box-shadow: var(--shadow-elevation-1);
         padding: calc(var(--spacing-unit) * 2.5);
-        transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
-      .rss-item:hover {
+      .media-card:hover {
         transform: translateY(-4px);
         box-shadow: var(--shadow-elevation-2);
       }
 
-      .rss-item h3 {
-        font-size: 1.1rem; 
-        margin-bottom: calc(var(--spacing-unit) * 1);
+      .media-card a {
+        text-decoration: none;
+        color: inherit;
       }
-      .rss-item p {
-         font-size: 0.95rem; 
-         margin-bottom: 0;
+
+      .media-card figure {
+        margin: 0;
+        position: relative;
+        z-index: 2;
       }
-      .linkedin-section p a {
-        color: var(--color-primary);
+
+      .media-card img {
+        width: 120px;
+        height: auto;
+        display: block;
+        margin: 0 auto 0.75rem;
+        object-fit: cover;
+        object-position: top center;
+        transform: translateY(-14px);
+        border-radius: 16px;
+        background: var(--color-surface);
+        box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .media-card:hover img {
+        transform: translateY(-20px);
+        box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+      }
+
+      .media-card figcaption {
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .media-card p {
+        text-align: center;
+        font-size: 0.95rem;
+        margin: 0;
       }
 
       @media (max-width: 560px) {
         .main-nav {
           justify-content: space-around;
         }
+
         .main-nav li {
           margin: 0 0.5rem;
         }
+
         .main-nav a {
           font-size: 0.9rem;
+        }
+
+        .media-card img {
+          width: 100px;
+          transform: translateY(-10px);
         }
       }
     </style>
   </head>
 
   <body>
-    <nav class="main-nav" role="navigation">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resume.html">Résumé</a></li>
-        <li><a href="data-visualizations.html">Portfolio</a></li>
-        <li><a href="thought-leadership.html">Writing</a></li>
-        <li><a href="#contact-title">Contact</a></li>
-      </ul>
-    </nav>
-    <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
-      Toggle Theme
-    </button>
-
-    <nav class="main-nav" role="navigation">
+    <nav class="main-nav">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -153,225 +156,69 @@
     </nav>
 
     <div class="container">
-      <header class="hero" role="banner">
+      <header class="hero">
         <div class="hero-text">
           <p class="eyebrow">SaaS & GTM Leader | Partnerships • Cloud • AI</p>
           <h1>Robin C. Hoffpauir</h1>
-          
           <p>
-            With over eight years leading SaaS go-to-market strategies, I specialize in building and scaling high-impact partnership ecosystems. My focus is on driving mutual growth through strategic alliances, co-selling motions, and partner enablement programs that deliver measurable revenue outcomes across Cloud and AI landscapes.
+            I build and scale revenue engines across SaaS, cloud, and platform ecosystems.
+            My focus is disciplined GTM execution, partner leverage, and predictable growth.
           </p>
-          <div class="hero-actions">
-            <a class="btn" href="assets/files/2025_Partnership_alliances.docx" download>Download My Resume</a>
-            <a class="btn" href="https://linkedin.com/in/robinchoffpauir" target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a>
-          </div>
         </div>
-        <figure class="hero-media">
-          <img src="images/Otot_Logo.png" alt="Robin's logo of a palmtree-Fleur-de-lis" loading="lazy" />
-          <figcaption>© 2025 Robin C. Hoffpauir</figcaption>
-        </figure>
       </header>
 
       <main>
-        <section aria-labelledby="experience-title" id="experience">
-           <h2 id="experience-title">Professional Experience</h2>
+        <section id="portfolio">
+          <h2>Explore My Work</h2>
+          <p class="section-intro">Each link below leads to a deeper view.</p>
 
-           <article class="card">
-             <div class="card-heading">
-               <h3>Navagis</h3>
-               <h4>Google Maps–powered geospatial solutions • API adoption & co-sell GTM</h4>
-               <p class="card-subtitle">Solution Sales Manager, North America • Remote • Oct 2024 – Present</p>
-             </div>
-             <ul>
-               <li>Lead strategic alignment with Google Cloud and Maps Field Sales teams to drive API consumption and solution adoption across enterprise accounts.</li>
-               <li>Develop co-sell motions and go-to-market programs targeting verticals such as mobility, logistics, and retail mapping.</li>
-               <li>Partner with Google’s regional and global leaders to identify whitespace opportunities and expand account penetration.</li>
-               <li>Drive account-based marketing initiatives and enablement strategies that accelerate partner pipeline growth.</li>
-             </ul>
-           </article>
- 
-           <article class="card">
-             <div class="card-heading">
-               <h3>ISI Analytics</h3>
-               <h4>Cloud-agnostic telecom analytics • Channel expansion & partner enablement</h4>
-               <p class="card-subtitle">Channel Partner Manager • Remote • Jun 2022 – Oct 2024</p>
-             </div>
-             <ul>
-               <li>Owned a high-performing partner territory, consistently exceeding revenue goals through disciplined, value-based sales motions.</li>
-               <li>Orchestrated sales plays aligned with measurable business outcomes and client growth.</li>
-               <li>Collaborated cross-functionally to activate partners, improve enablement assets, and elevate customer experience.</li>
-               <li>Contributed insights to playbooks that increased adoption and sharpened messaging.</li>
-             </ul>
-           </article>
- 
-           <article class="card">
-             <div class="card-heading">
-               <h3>Parlayking LTD</h3>
-               <h4>Predictive analytics SaaS • Founder-led GTM, revenue ops & exit</h4>
-               <p class="card-subtitle">Founder & Chief Revenue Officer • Denver, CO • May 2020 – Jun 2022</p>
-             </div>
-             <ul>
-               <li>Launched and scaled a SaaS platform, pairing go-to-market strategy with disciplined pipeline management.</li>
-               <li>Built, coached, and inspired a performance-driven sales team centered on customer value and retention.</li>
-               <li>Expanded key accounts through consultative relationship management, upsell programs, and partner alignment.</li>
-             </ul>
-           </article>
- 
-           <article class="card">
-             <div class="card-heading">
-               <h3>Compliance Solutions</h3>
-               <h4>Regulatory SaaS • Ecosystem growth & data-driven onboarding</h4>
-               <p class="card-subtitle">Channel Partner Account Manager • Aug 2018 – May 2020</p>
-             </div>
-             <ul>
-               <li>Managed strategic channel accounts, creating repeatable revenue growth through trust-based partnerships.</li>
-               <li>Guided mid-market and enterprise prospects through tailored compliance solution evaluations and onboarding.</li>
-               <li>Partnered with product and success teams to deliver bespoke solutions that solved complex customer challenges.</li>
-             </ul>
-           </article>
-        </section>
+          <div class="media-grid">
+            <article class="media-card">
+              <a href="about.html">
+                <figure>
+                  <img src="images/Cartoon/Cartoon3piece.png" alt="Cartoon formal portrait" />
+                  <figcaption>About Me</figcaption>
+                </figure>
+                <p>Professional overview and leadership story.</p>
+              </a>
+            </article>
 
-        <section aria-labelledby="portfolio-title" id="portfolio">
-           <h2 id="portfolio-title">Explore My Work</h2>
-           <p class="section-intro">Each link below will bring you to its respective page with more details.</p>
- 
-           <div class="media-grid">
-             <article class="media-card">
-               <a href="about.html">
-                 <figure>
-                  <img src="images/Cartoon/Cartoon3piece.png" alt="Cartoon formal portrait in a three-piece suit." loading="lazy" />
-                   <figcaption>About Me</figcaption>
-                 </figure>
-                 <p>Polished professional presence and brand overview.</p>
-               </a>
-             </article>
- 
-             <article class="media-card">
-               <a href="resume.html">
-                 <figure>
-                  <img src="images/Cartoon/CartoonDesk.png" alt="Cartoon professional working at a desk." loading="lazy" />
-                   <figcaption>Résumé</figcaption>
-                 </figure>
-                 <p>Professional summary, experience, and achievements.</p>
-               </a>
-             </article>
- 
-             <article class="media-card">
-               <a href="resume.html">
-                 <figure>
-                  <img src="images/Cartoon/CartoonBizCasualPointing.png" alt="Cartoon business leader pointing confidently." loading="lazy" />
-                   <figcaption>Professional History</figcaption>
-                 </figure>
-                 <p>Career milestones and industry contributions.</p>
-               </a>
-             </article>
- 
-             <article class="media-card">
-               <a href="testimonials.html">
-                 <figure>
-                  <img src="images/Cartoon/CartoonBizCasualTablet.png" alt="Cartoon professional holding a tablet." loading="lazy" />
-                   <figcaption>Client Testimonials</figcaption>
-                 </figure>
-                 <p>Testimonials and success stories.</p>
-               </a>
-             </article>
- 
-             <article class="media-card">
-               <a href="data-visualizations.html">
-                 <figure>
-                   <img src="images/est_ba_using_speedangle.png" alt="Python plot of sabermetric baseball data analysis" loading="lazy" />
-                   <figcaption>Data & Visualizations</figcaption>
-                 </figure>
-                 <p>Interactive charts and business insights.</p>
-               </a>
-             </article>
- 
-             <article class="media-card">
-               <a href="thought-leadership.html">
-                 <figure>
-                  <img src="images/Cartoon/CartoonTabletSales.png" alt="Cartoon presenter sharing ideas with a tablet." loading="lazy" />
-                   <figcaption>Thought Leadership</figcaption>
-                 </figure>
-                 <p>Articles and perspectives on SaaS innovation.</p>
-               </a>
-             </article>
-           </div>
-         </section>
+            <article class="media-card">
+              <a href="resume.html">
+                <figure>
+                  <img src="images/Cartoon/CartoonDesk.png" alt="Cartoon working at desk" />
+                  <figcaption>Résumé</figcaption>
+                </figure>
+                <p>Experience, outcomes, and execution.</p>
+              </a>
+            </article>
 
-        <div class="media-container">
+            <article class="media-card">
+              <a href="data-visualizations.html">
+                <figure>
+                  <img src="images/Cartoon/CartoonTabletSales.png" alt="Cartoon presenting data" />
+                  <figcaption>Portfolio</figcaption>
+                </figure>
+                <p>Data, systems, and GTM storytelling.</p>
+              </a>
+            </article>
 
-          <section aria-labelledby="linkedin-feed">
-            <h2 id="linkedin-feed">Recent LinkedIn Posts</h2>
-            <p class="linkedin-section section-intro">
-              Follow my latest professional updates directly on
-              <a href="https://www.linkedin.com/in/robinchoffpauir" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>.
-              I post regularly about Google Maps Platform, Cloud co-selling, AI-driven sales enablement, and the evolving landscape of digital partnerships.
-            </p>
-
-            <div class="rss-feed">
-              <article class="rss-item">
-                <h3><a href="https://www.linkedin.com/in/robinchoffpauir/recent-activity/" target="_blank" rel="noopener noreferrer">🚀 Google Maps Marketplace Innovation</a></h3>
-                <p>Reflections on the growing ecosystem of verticalized solutions on the Google Maps Marketplace and what this means for digital-twin-driven retail experiences.</p>
-              </article>
-
-              <article class="rss-item">
-                <h3><a href="https://www.linkedin.com/in/robinchoffpauir/recent-activity/" target="_blank" rel="noopener noreferrer">🤝 Co-Selling with Hyperscalers</a></h3>
-                <p>Insights into how field reps and partners can align incentives to accelerate adoption and incremental revenue through the Cloud Marketplace model.</p>
-              </article>
-
-              <article class="rss-item">
-                <h3><a href="https://www.linkedin.com/in/robinchoffpauir/recent-activity/" target="_blank" rel="noopener noreferrer">🌍 Digital Twins and Spatial Intelligence</a></h3>
-                <p>How location intelligence and real-world data are reshaping business strategy, from mobility to infrastructure planning.</p>
-              </article>
-            </div>
-            
-             <div class="hero-actions" style="margin-top: calc(var(--spacing-unit) * 3);">
-                <a class="btn" href="https://www.linkedin.com/in/robinchoffpauir" target="_blank" rel="noopener noreferrer">View More on LinkedIn</a>
-            </div>
-            
-          </section>
-
-          <section aria-labelledby="podcast-title" class="podcast-section">
-            <h2 id="podcast-title">Featured Podcast Interview</h2>
-            <p class="section-intro">Listen to my conversation on <em>Training That Works</em> to hear how I cultivate durable sales processes and winning GTM strategies.</p>
-            <div class="podcast-embeds">
-              <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width: 100%; max-width: 660px; overflow: hidden; border-radius: 10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/training-that-sticks-with-robin-hoffpauir/id1811359309?i=1000730615659" title="Training That Sticks podcast on Apple Podcasts"></iframe>
-
-              <iframe
-                style="border-radius: 12px"
-                src="" /* Paste your valid Spotify embed link here */
-                width="100%"
-                height="352"
-                frameborder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                title="Training That Sticks podcast on Spotify (Paste new embed URL in src)">
-              </iframe>
-            </div>
-          </section>
-
-        </div> <section aria-labelledby="contact-title" class="cta-section" id="contact">
-          <h2 id="contact-title">Let's Connect</h2>
-          <p>I’m always open to discussing SaaS go-to-market strategy, partnerships, and customer success initiatives.</p>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:hoffpauirrobin@gmail.com">hoffpauirrobin@gmail.com</a>
-            • <strong>Phone:</strong>
-            <a href="tel:18502257539">850-225-7539</a>
-          </p>
-          <div class="hero-actions">
-            <a class="btn" href="assets/files/2025_Partnership_alliances.docx" download>Download My Resume</a>
-            <a class="btn" href="https://linkedin.com/in/robinchoffpauir" target="_blank" rel="noopener noreferrer">Schedule a Conversation</a>
+            <article class="media-card">
+              <a href="thought-leadership.html">
+                <figure>
+                  <img src="images/Cartoon/CartoonBizCasualPointing.png" alt="Cartoon thought leader" />
+                  <figcaption>Writing</figcaption>
+                </figure>
+                <p>Perspectives on sales and platforms.</p>
+              </a>
+            </article>
           </div>
         </section>
-
-        <footer>
-          <p>© 2025 Robin C. Hoffpauir. All rights reserved.</p>
-        </footer>
       </main>
+
+      <footer>
+        <p>© 2025 Robin C. Hoffpauir. All rights reserved.</p>
+      </footer>
     </div>
 
     <script src="assets/js/theme.js"></script>
