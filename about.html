@@ -6,80 +6,80 @@
     <title>About | Robin Hoffpauir</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <style>
-  :root {
-    --nav-height: 60px;
-    --nav-background: var(--color-surface, #ffffff);
-    --nav-border: var(--color-border, #dadce0);
-    --nav-shadow: var(--shadow-elevation-1, 0 1px 3px rgba(0,0,0,0.1));
-  }
+      :root {
+        --nav-height: 60px;
+        --nav-background: var(--color-surface, #ffffff);
+        --nav-border: var(--color-border, #dadce0);
+        --nav-shadow: var(--shadow-elevation-1, 0 1px 3px rgba(0,0,0,0.1));
+      }
 
-  [data-theme="dark"] {
-    --nav-background: var(--color-surface, #303134);
-    --nav-border: var(--color-border, #5f6368);
-  }
+      [data-theme="dark"] {
+        --nav-background: var(--color-surface, #303134);
+        --nav-border: var(--color-border, #5f6368);
+      }
 
-  body {
-    /* Offset the body content so it sits below the fixed nav bar */
-    padding-top: var(--nav-height);
-  }
+      body {
+        /* Offset the body content so it sits below the fixed nav bar */
+        padding-top: var(--nav-height);
+      }
 
-  .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--nav-height);
-    background-color: var(--nav-background);
-    border-bottom: 1px solid var(--nav-border);
-    box-shadow: var(--nav-shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: background-color var(--transition-speed), border-color var(--transition-speed);
-  }
+      .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--nav-height);
+        background-color: var(--nav-background);
+        border-bottom: 1px solid var(--nav-border);
+        box-shadow: var(--nav-shadow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: background-color var(--transition-speed), border-color var(--transition-speed);
+      }
 
-  .main-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+      .main-nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-  .main-nav li {
-    margin: 0 1rem;
-  }
+      .main-nav li {
+        margin: 0 1rem;
+      }
 
-  .main-nav a {
-    text-decoration: none;
-    font-weight: 500;
-    color: var(--color-on-surface-secondary);
-    transition: color 0.3s ease;
-  }
+      .main-nav a {
+        text-decoration: none;
+        font-weight: 500;
+        color: var(--color-on-surface-secondary);
+        transition: color 0.3s ease;
+      }
 
-  .main-nav a:hover,
-  .main-nav a.active {
-    color: var(--color-primary);
-  }
-  
-  /* Responsive styles for small screens */
-  @media (max-width: 560px) {
-    .main-nav {
-      justify-content: space-around;
-    }
-    .main-nav li {
-      margin: 0 0.5rem;
-    }
-    .main-nav a {
-      font-size: 0.9rem;
-    }
-  }
-    </style>  
+      .main-nav a:hover,
+      .main-nav a.active {
+        color: var(--color-primary);
+      }
+
+      /* Responsive styles for small screens */
+      @media (max-width: 560px) {
+        .main-nav {
+          justify-content: space-around;
+        }
+        .main-nav li {
+          margin: 0 0.5rem;
+        }
+        .main-nav a {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
     <nav class="main-nav" role="navigation">
-    <ul>
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="resume.html">Résumé</a></li>
@@ -87,7 +87,7 @@
         <li><a href="thought-leadership.html">Writing</a></li>
         <li><a href="index.html#contact-title">Contact</a></li>
       </ul>
-    </nav>    
+    </nav>
 
     <button id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Toggle Theme</button>
 
@@ -95,47 +95,104 @@
       <header class="hero" role="banner">
         <div class="hero-text">
           <h1>About Robin Hoffpauir</h1>
-          <p class="eyebrow">Sales Director • Partnerships &amp; GTM Strategy • SaaS &amp; AI Platforms</p>
+          <p class="eyebrow">Revenue Leader for API and Enterprise Platforms • GTM, Partnerships, Forecasting, Team Execution</p>
           <p>
-            With over eight years leading SaaS go-to-market strategies, I specialize in building and scaling high-impact partnership ecosystems. My focus is on driving mutual growth through strategic alliances, co-selling motions, and partner enablement programs that deliver measurable revenue outcomes across Cloud and AI landscapes.
+            I build predictable revenue engines for usage-driven platforms.
+            That means turning technical products into clear commercial motions, tightening pipeline discipline,
+            improving forecast accuracy, and scaling teams that win consistently in competitive enterprise cycles.
           </p>
+          <p>
+            Today I operate in the geospatial and cloud ecosystem, leading go-to-market alignment, co-sell strategy,
+            and expansion plays across complex stakeholder maps.
+          </p>
+        </div>
       </header>
 
       <main class="about-section">
-          <section id="photo-gallery">
-            <div class="photo-gallery">
-                <figure>
-                  <img src="images/Cartoon/CartoonRelaxedSuit.png" alt="Cartoon portrait in a relaxed suit with arms crossed" loading="lazy">
-                  <figcaption>Balanced, confident, and ready to collaborate.</figcaption>
-                </figure>
-            </div>
-          </section>
+        <section id="photo-gallery">
+          <div class="photo-gallery">
+            <figure>
+              <img src="images/Cartoon/CartoonRelaxedSuit.png" alt="Cartoon portrait in a relaxed suit with arms crossed" loading="lazy" />
+              <figcaption>Operator mindset, relationship-first, execution obsessed.</figcaption>
+            </figure>
+          </div>
+        </section>
 
         <section id="overview">
           <h2>Overview</h2>
-          <p>With more than eight years in enterprise SaaS, cloud, and AI-driven data platforms, I’ve focused my career on transforming complex technologies into business outcomes that matter. I currently serve as <strong>Solution Sales Manager for Navagis</strong>, a Premier Google Maps Partner, leading go-to-market alignment with Google Cloud teams across North America.</p>
-          <p>Before Navagis, I scaled channel and CSP growth at ISI Analytics — achieving 132% quota attainment across eight consecutive quarters. Earlier, I founded and exited <em>Parlayking LTD</em>, a SaaS analytics startup built on Bayesian models for predictive compensation analysis — a project that combined my love of data, problem-solving, and real-world application.</p>
+          <p>
+            I am a sales leader with 8+ years across enterprise SaaS, cloud, and data platforms. My lane is owning growth by building repeatable motions:
+            clear ICP and positioning, partner leverage, multi-threaded enterprise sales cycles, and operational cadence that keeps deals real and forecasts honest.
+          </p>
+          <p>
+            I currently serve as <strong>Solutions Sales Manager at Navagis</strong>, a Premier Google Maps Platform partner, where I lead go-to-market alignment with Google Cloud teams across North America.
+            The work lives at the intersection of platform adoption and expansion, partner co-selling, and the operational reality of usage-based economics.
+          </p>
+          <p>
+            Before Navagis, I scaled channel and CSP growth at ISI Analytics, delivering <strong>132% quota attainment across eight consecutive quarters</strong>.
+            Earlier, I founded and exited <em>Parlayking LTD</em>, a SaaS analytics startup built on Bayesian models for predictive compensation analysis.
+            That experience made me fluent in translating messy data into decisions a team can execute.
+          </p>
         </section>
+
         <section id="philosophy">
           <h2>Approach &amp; Philosophy</h2>
-          <p>Growth isn’t about chasing numbers — it’s about alignment. I focus on clarity, collaboration, and measurable outcomes that move the needle. My work blends analytical rigor with authentic relationships, building repeatable frameworks that scale across teams, partners, and customers. Whether I’m designing a co-sell motion with Google Cloud or guiding a client through AI adoption, I aim to create compounding impact.</p>
+          <p>
+            My operating model is simple: align, diagnose, implement, execute.
+            Alignment means shared definitions (ICP, stages, exit criteria, and what "qualified" actually means).
+            Diagnosis means looking at data and deal reality, not vibes.
+            Implementation is building the system (cadence, plays, enablement, partner motion).
+            Execution is coaching and inspection, with the same standards every week.
+          </p>
+          <p>
+            I love the art of relationships, but I respect the math.
+            The goal is a team that can explain why revenue will happen, not just hope it does.
+            When the process is tight, creativity becomes a multiplier instead of a fire drill.
+          </p>
+        </section>
+
+        <section id="leadership">
+          <h2>Leadership Style</h2>
+          <p>
+            I am a player-coach who runs toward clarity and accountability.
+            I coach to behaviors (discovery quality, multi-threading, next steps, mutual plans), not just outcomes.
+            I build a culture where the scoreboard matters, and so does how we get there.
+          </p>
+          <p>
+            I operate cross-functionally by default. Strong sales leadership is equal parts customer insight, product feedback loop, partner coordination,
+            and RevOps discipline. If any one of those breaks, the forecast becomes fantasy.
+          </p>
+        </section>
+
+        <section id="mapbox-fit">
+          <h2>Why I Fit a Head of Sales Role (Mapbox-style)</h2>
+          <ul>
+            <li><strong>Usage-based revenue fluency:</strong> I think in adoption, expansion, and retention, then map that to pipeline and forecast rigor.</li>
+            <li><strong>Partner leverage:</strong> I build co-sell motions that are operational, measurable, and repeatable, not just "relationships".</li>
+            <li><strong>Enterprise execution:</strong> I run multi-threaded cycles with mutual plans, crisp next steps, and tight qualification.</li>
+            <li><strong>Systems builder:</strong> I install cadence, stage definitions, enablement, and inspection that makes performance predictable.</li>
+          </ul>
         </section>
 
         <section id="personal">
           <h2>Beyond Work</h2>
-          <p>Before business, there was baseball. I played collegiate ball after an <strong>All-State high school career</strong> — years that taught me discipline, grit, and the power of repetition. That athlete’s mindset still drives how I think and lead today.</p>
-          <p>Outside of work, I’m fascinated by how data reveals patterns in performance. I spend time coding in <strong>Python</strong> — building models and visualizations for <strong>sports analytics</strong> and betting strategy. It’s part curiosity, part creative outlet — and all about learning how systems behave under pressure.</p>
-          <p>When I’m not working or tinkering with code, I’m probably <strong>golfing, fishing along the Gulf Coast, or hanging out with my dog</strong>. Those moments keep me grounded and remind me that balance is a form of strategy, too.</p>
-
+          <p>
+            Before business, there was baseball. I played collegiate ball after an <strong>All-State high school career</strong>.
+            It taught me discipline, repetition, and how to perform when it is uncomfortable.
+          </p>
+          <p>
+            Outside of work, I build in <strong>Python</strong> and obsess over performance systems, especially sports analytics and forecasting.
+            When I am not working or coding, I am probably <strong>golfing, fishing along the Gulf Coast, or hanging out with my dog</strong>.
+          </p>
         </section>
 
         <section id="focus">
           <h2>Currently Focused On</h2>
           <ul>
-            <li>Expanding Google Cloud &amp; Maps ecosystem growth through partner innovation</li>
-            <li>Designing AI-driven enablement frameworks that align sales, product, and marketing teams</li>
-            <li>Developing data visualization dashboards for analytics-driven storytelling</li>
-            <li>Exploring intersections of geospatial, sports, and predictive analytics</li>
+            <li>Building repeatable GTM plays for platform adoption and expansion</li>
+            <li>Improving forecast accuracy through tighter qualification and stage exit criteria</li>
+            <li>Scaling partner co-sell motions that produce measurable pipeline and revenue</li>
+            <li>Using data visualization to tell clear commercial stories</li>
           </ul>
         </section>
 
