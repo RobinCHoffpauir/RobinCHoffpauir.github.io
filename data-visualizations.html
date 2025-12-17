@@ -7,89 +7,23 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <style>
-  :root {
-    --nav-height: 60px;
-    --nav-background: var(--color-surface, #ffffff);
-    --nav-border: var(--color-border, #dadce0);
-    --nav-shadow: var(--shadow-elevation-1, 0 1px 3px rgba(0,0,0,0.1));
-  }
+      @media (max-width: 560px) {
+        #partnerships-analytics .photo-gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 24px;
+          margin-top: 20px;
+        }
 
-  [data-theme="dark"] {
-    --nav-background: var(--color-surface, #303134);
-    --nav-border: var(--color-border, #5f6368);
-  }
-
-  body {
-    /* Offset the body content so it sits below the fixed nav bar */
-    padding-top: var(--nav-height);
-  }
-
-  .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--nav-height);
-    background-color: var(--nav-background);
-    border-bottom: 1px solid var(--nav-border);
-    box-shadow: var(--nav-shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: background-color var(--transition-speed), border-color var(--transition-speed);
-  }
-
-  .main-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .main-nav li {
-    margin: 0 1rem;
-  }
-
-  .main-nav a {
-    text-decoration: none;
-    font-weight: 500;
-    color: var(--color-on-surface-secondary);
-    transition: color 0.3s ease;
-  }
-
-  .main-nav a:hover,
-  .main-nav a.active {
-    color: var(--color-primary);
-  }
-  
-  /* Responsive styles for small screens */
-  @media (max-width: 560px) {
-    .main-nav {
-      justify-content: space-around;
-    }
-    .main-nav li {
-      margin: 0 0.5rem;
-    }
-    .main-nav a {
-      font-size: 0.9rem;
-    }
-    #partnerships-analytics .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
-    }
-    #partnerships-analytics figure {
-      margin: 0;
-    }
-  }
+        #partnerships-analytics figure {
+          margin: 0;
+        }
+      }
     </style>
-    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
   <body>
-    <nav class="main-nav" role="navigation">
+    <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>

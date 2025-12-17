@@ -8,6 +8,72 @@
     <!-- Global styles handle ALL color + theme logic -->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
+    <style>
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: calc(var(--spacing-unit) * 3);
+      }
+
+      .media-card {
+        position: relative;
+        overflow: visible;
+        padding: calc(var(--spacing-unit) * 2.5);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-elevation-1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .media-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-elevation-2);
+      }
+
+      .media-card a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .media-card figure {
+        margin: 0;
+        text-align: center;
+      }
+
+      .media-card img {
+        width: 120px;
+        height: auto;
+        display: block;
+        margin: 0 auto 0.75rem;
+        object-fit: cover;
+        object-position: top center;
+        transform: translateY(-12px);
+        border-radius: 16px;
+        box-shadow: var(--shadow-elevation-2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .media-card:hover img {
+        transform: translateY(-18px);
+      }
+
+      .media-card figcaption {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .media-card p {
+        font-size: 0.95rem;
+        margin: 0;
+        text-align: center;
+      }
+
+      @media (max-width: 560px) {
+        .media-card img {
+          width: 100px;
+          transform: translateY(-8px);
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -19,7 +85,7 @@
         <li><a href="resume.html">Résumé</a></li>
         <li><a href="data-visualizations.html">Portfolio</a></li>
         <li><a href="thought-leadership.html">Writing</a></li>
-        <li><a href="#contact-title">Contact</a></li>
+        <li><a href="index.html#contact-title">Contact</a></li>
       </ul>
     </nav>
 
