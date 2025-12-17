@@ -196,13 +196,15 @@ nav ul {
   color: var(--color-on-surface);
   background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
   text-decoration: none;
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-primary) 35%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in srgb, var(--color-primary) 35%, transparent);
 }
 
 .main-nav a.active {
   color: var(--color-primary);
   background-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-primary) 55%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in srgb, var(--color-primary) 55%, transparent);
 }
 
 /* ------------------------- */
@@ -440,10 +442,6 @@ nav ul {
   border-collapse: collapse;
 }
 
-.win-table thead {
-  background-color: var(--color-surface-raised, #f7f7f7);
-}
-
 .win-table th,
 .win-table td {
   padding: calc(var(--spacing-unit) * 2);
@@ -453,7 +451,8 @@ nav ul {
 
 .win-table th {
   font-weight: var(--font-weight-semibold);
-  color: var(--color-on-surface);
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .win-table tr:last-of-type td {
