@@ -578,14 +578,19 @@ nav ul {
 .media-card figure {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--spacing-unit) * 1.5);
+  gap: calc(var(--spacing-unit) * 2);
   align-items: center;
+  margin: 0;
 }
 
 .media-card img {
-  border-radius: calc(var(--border-radius) * 1.25);
-  object-fit: cover;
-  height: 220px;
+  height: 260px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: calc(var(--border-radius) * 1.1);
+  background: transparent;
+  box-shadow: none;
 }
 
 .media-card figcaption {
