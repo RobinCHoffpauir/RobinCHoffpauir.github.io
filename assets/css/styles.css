@@ -584,9 +584,8 @@ nav ul {
 }
 
 .media-card img {
-  height: 260px;
-  width: auto;
-  max-width: 100%;
+  height: clamp(280px, 32vw, 360px);
+  width: min(100%, 420px);
   object-fit: contain;
   border-radius: calc(var(--border-radius) * 1.1);
   background: transparent;
@@ -723,7 +722,8 @@ footer {
   }
 
   .media-card img {
-    height: auto;
+    height: clamp(240px, 60vw, 320px);
+    width: min(100%, 380px);
   }
 }
 /* --- About Page Custom Styles --- */
