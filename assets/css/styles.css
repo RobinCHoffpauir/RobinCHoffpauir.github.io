@@ -576,25 +576,32 @@ nav ul {
 }
 
 .media-card figure {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--spacing-unit) * 2);
-  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: stretch;
   margin: 0;
+  min-height: clamp(240px, 42vh, 360px);
+  border-radius: calc(var(--border-radius) * 1.1);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-primary) 6%, var(--color-surface));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .media-card img {
-  height: clamp(280px, 32vw, 360px);
-  width: min(100%, 420px);
-  object-fit: contain;
-  border-radius: calc(var(--border-radius) * 1.1);
-  background: transparent;
-  box-shadow: none;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .media-card figcaption {
   font-weight: var(--font-weight-bold);
   font-size: 1rem;
+  padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 1.5);
+  text-align: center;
+  background: color-mix(in srgb, var(--color-surface) 75%, transparent);
+  color: var(--color-on-surface);
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
 }
 
 .media-content {
@@ -721,9 +728,8 @@ footer {
     padding: calc(var(--spacing-unit) * 3);
   }
 
-  .media-card img {
-    height: clamp(240px, 60vw, 320px);
-    width: min(100%, 380px);
+  .media-card figure {
+    min-height: clamp(200px, 55vw, 300px);
   }
 }
 /* --- About Page Custom Styles --- */
