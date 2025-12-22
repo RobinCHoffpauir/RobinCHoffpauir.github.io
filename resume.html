@@ -8,62 +8,269 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <style>
-      .resume-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+      /* Career Snapshot Specific Styles */
+      #career-snapshot {
+        padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 2);
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        min-height: 100vh;
+      }
+
+      .snapshot-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .snapshot-header {
+        text-align: center;
+        margin-bottom: calc(var(--spacing-unit) * 6);
+      }
+
+      .snapshot-header h1 {
+        color: #fff;
+        font-size: 2.5rem;
+        margin-bottom: calc(var(--spacing-unit) * 2);
+      }
+
+      .snapshot-header .eyebrow {
+        color: #94a3b8;
+        margin-bottom: calc(var(--spacing-unit) * 3);
+      }
+
+      .download-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        padding: 12px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      }
+
+      .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+      }
+
+      /* Stats Grid */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: calc(var(--spacing-unit) * 3);
+        margin-bottom: calc(var(--spacing-unit) * 8);
+      }
+
+      .stat-card {
+        background: rgba(100, 116, 139, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(99, 102, 241, 0.3);
+        border-radius: 1rem;
+        padding: calc(var(--spacing-unit) * 3);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(99, 102, 241, 0.6);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      }
+
+      .stat-icon {
+        font-size: 3rem;
+        margin-bottom: calc(var(--spacing-unit) * 2);
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: calc(var(--spacing-unit));
+      }
+
+      .stat-label {
+        color: #cbd5e1;
+        font-size: 0.9rem;
+      }
+
+      /* Timeline */
+      .timeline-header {
+        color: #fff;
+        font-size: 2rem;
+        margin-bottom: calc(var(--spacing-unit));
+      }
+
+      .timeline-intro {
+        color: #94a3b8;
+        margin-bottom: calc(var(--spacing-unit) * 6);
+      }
+
+      .timeline-container {
+        position: relative;
+        padding-left: calc(var(--spacing-unit) * 6);
+      }
+
+      .timeline-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, #14b8a6, #8b5cf6, #6366f1);
+        border-radius: 2px;
+      }
+
+      .timeline-item {
         margin-bottom: calc(var(--spacing-unit) * 5);
+        position: relative;
       }
 
-      .resume-summary {
-        max-width: 720px;
+      .timeline-dot {
+        position: absolute;
+        left: calc(var(--spacing-unit) * -6.2);
+        top: calc(var(--spacing-unit) * 3);
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 4px solid #0f172a;
       }
 
-      .resume-summary p {
-        font-size: 1.05rem;
+      .timeline-content {
+        background: rgba(100, 116, 139, 0.1);
+        border: 2px solid rgba(99, 102, 241, 0.3);
+        border-radius: 1rem;
+        padding: calc(var(--spacing-unit) * 3);
+        transition: all 0.3s ease;
       }
 
-      .resume-section {
-        margin-bottom: calc(var(--spacing-unit) * 5);
+      .timeline-item:hover .timeline-content {
+        border-color: rgba(99, 102, 241, 0.6);
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
       }
 
-      .resume-section h2 {
+      .timeline-title {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: calc(var(--spacing-unit));
+      }
+
+      .timeline-company {
+        color: #818cf8;
+        font-weight: 600;
+        margin-bottom: calc(var(--spacing-unit) * 0.5);
+      }
+
+      .timeline-date {
+        color: #94a3b8;
+        font-size: 0.9rem;
+        margin-bottom: calc(var(--spacing-unit) * 2);
+      }
+
+      .timeline-metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc(var(--spacing-unit));
+      }
+
+      .metric-badge {
+        background: rgba(99, 102, 241, 0.2);
+        border: 1px solid rgba(99, 102, 241, 0.4);
+        color: #a5b4fc;
+        padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 1.6);
+        border-radius: 1rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      /* Core Competencies */
+      .competencies-section {
+        margin-top: calc(var(--spacing-unit) * 8);
+        padding: calc(var(--spacing-unit) * 4);
+        background: rgba(100, 116, 139, 0.1);
+        border: 2px solid rgba(99, 102, 241, 0.3);
+        border-radius: 1rem;
+      }
+
+      .competencies-section h2 {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: calc(var(--spacing-unit) * 3);
+      }
+
+      .competencies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: calc(var(--spacing-unit) * 3);
+      }
+
+      .competency-category h3 {
+        color: #818cf8;
+        font-size: 1.1rem;
         margin-bottom: calc(var(--spacing-unit) * 1.5);
       }
 
-      .role-header {
-        margin-bottom: calc(var(--spacing-unit) * 1);
+      .competency-category ul {
+        color: #cbd5e1;
+        list-style: none;
+        padding: 0;
       }
 
-      .role-header h3 {
-        margin-bottom: 0.25rem;
+      .competency-category li {
+        margin-bottom: calc(var(--spacing-unit));
+        padding-left: calc(var(--spacing-unit) * 2);
+        position: relative;
       }
 
-      .role-meta {
-        font-size: 0.95rem;
-        color: var(--color-on-surface-secondary);
-        margin-bottom: calc(var(--spacing-unit) * 1);
+      .competency-category li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: #6366f1;
+        font-weight: bold;
       }
 
-      ul.resume-bullets {
-        padding-left: 1.2rem;
+      /* Bottom Actions */
+      .bottom-actions {
+        text-align: center;
+        margin-top: calc(var(--spacing-unit) * 8);
       }
 
-      ul.resume-bullets li {
-        margin-bottom: 0.6rem;
+      .back-link {
+        display: inline-block;
+        color: #818cf8;
+        text-decoration: none;
+        font-size: 1.1rem;
+        padding: 12px 24px;
+        border: 2px solid rgba(99, 102, 241, 0.3);
+        border-radius: 8px;
+        transition: all 0.3s ease;
       }
 
-      .resume-actions {
-        display: flex;
-        gap: calc(var(--spacing-unit) * 2);
-        margin-top: calc(var(--spacing-unit) * 4);
+      .back-link:hover {
+        border-color: rgba(99, 102, 241, 0.6);
+        background: rgba(99, 102, 241, 0.1);
       }
 
-      @media (max-width: 800px) {
-        .resume-header {
-          flex-direction: column;
-          align-items: flex-start;
+      @media (max-width: 768px) {
+        #career-snapshot {
+          padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 2);
+        }
+        
+        .snapshot-header h1 {
+          font-size: 2rem;
+        }
+        
+        .stat-value {
+          font-size: 2rem;
+        }
+
+        .timeline-container {
+          padding-left: calc(var(--spacing-unit) * 4);
+        }
+
+        .timeline-dot {
+          left: calc(var(--spacing-unit) * -4.2);
         }
       }
     </style>
@@ -86,132 +293,152 @@
     </button>
 
     <div class="container fade-in">
-      <header class="resume-header">
-        <div class="resume-summary">
-          <h1>Robin C. Hoffpauir</h1>
-          <p class="eyebrow">
-            Revenue Leader for API and Enterprise Platforms
-          </p>
-          <p>
-            Sales leader with deep experience scaling usage-based, platform-driven revenue across SaaS,
-            cloud, and data ecosystems. Known for building predictable revenue engines by aligning GTM strategy,
-            partner motion, and disciplined forecasting. Comfortable operating at board-level altitude while
-            staying close enough to deals, data, and teams to drive execution.
-          </p>
+      <section id="career-snapshot">
+        <div class="snapshot-container">
+          <div class="snapshot-header">
+            <h1>Career Snapshot</h1>
+            <p class="eyebrow">Interactive overview of revenue leadership experience & impact</p>
+            <a href="assets/files/2025_Partnership_alliances.docx" class="download-btn">
+              📄 Download Traditional Résumé
+            </a>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">💰</div>
+              <div class="stat-value">$17M</div>
+              <div class="stat-label">ARR Portfolio</div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">🎯</div>
+              <div class="stat-value">33%</div>
+              <div class="stat-label">Team Win Rate</div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">📈</div>
+              <div class="stat-value">23%</div>
+              <div class="stat-label">Forecast Accuracy ↑</div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">👥</div>
+              <div class="stat-value">12</div>
+              <div class="stat-label">Revenue Team Built</div>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <h2 class="timeline-header">Career Journey</h2>
+          <p class="timeline-intro">Progression from IC to Revenue Leadership</p>
+          
+          <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <!-- Role 1: Navagis -->
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">Solutions Sales Manager</h3>
+                <p class="timeline-company">Navagis Inc.</p>
+                <p class="timeline-date">Oct 2024 — Present</p>
+                <div class="timeline-metrics">
+                  <span class="metric-badge">$17M ARR Book</span>
+                  <span class="metric-badge">40% Pipeline Growth</span>
+                  <span class="metric-badge">#1 Google Maps Partner</span>
+                  <span class="metric-badge">33% Win Rate</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role 2: ISI Analytics -->
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background: linear-gradient(135deg, #3b82f6, #6366f1);"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">Channel Sales Manager</h3>
+                <p class="timeline-company">ISI Analytics</p>
+                <p class="timeline-date">Jun 2022 — Sep 2024</p>
+                <div class="timeline-metrics">
+                  <span class="metric-badge">132% Quota (8 Qtrs)</span>
+                  <span class="metric-badge">105% YoY Revenue Growth</span>
+                  <span class="metric-badge">2× Average Deal Size</span>
+                  <span class="metric-badge">18% Forecast Improvement</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role 3: Parlayking -->
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">Founder & Head of Sales</h3>
+                <p class="timeline-company">Parlayking LTD</p>
+                <p class="timeline-date">May 2020 — Jun 2022</p>
+                <div class="timeline-metrics">
+                  <span class="metric-badge">0→1 SaaS Startup</span>
+                  <span class="metric-badge">6-Person Revenue Team</span>
+                  <span class="metric-badge">Successful Acquisition</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role 4: Compliance Solutions -->
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background: linear-gradient(135deg, #14b8a6, #3b82f6);"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">Account Executive</h3>
+                <p class="timeline-company">Compliance Solutions</p>
+                <p class="timeline-date">Aug 2018 — May 2020</p>
+                <div class="timeline-metrics">
+                  <span class="metric-badge">300% Customer Base Growth</span>
+                  <span class="metric-badge">Exceeded Quota Monthly</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core Competencies Section -->
+          <div class="competencies-section">
+            <h2>Core Competencies</h2>
+            <div class="competencies-grid">
+              <div class="competency-category">
+                <h3>Revenue Leadership</h3>
+                <ul>
+                  <li>Enterprise SaaS Sales</li>
+                  <li>Usage-based Revenue Forecasting</li>
+                  <li>Team Development & Coaching</li>
+                  <li>C-Suite Engagement</li>
+                </ul>
+              </div>
+              <div class="competency-category">
+                <h3>GTM Strategy</h3>
+                <ul>
+                  <li>Partner Ecosystem Development</li>
+                  <li>Hyperscaler Co-Sell Motions</li>
+                  <li>Account-Based Selling</li>
+                  <li>Platform Go-to-Market</li>
+                </ul>
+              </div>
+              <div class="competency-category">
+                <h3>Sales Operations</h3>
+                <ul>
+                  <li>Forecast Management</li>
+                  <li>Pipeline Architecture</li>
+                  <li>Revenue Process Design</li>
+                  <li>CRM & Analytics Infrastructure</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Back to Home Button -->
+          <div class="bottom-actions">
+            <a href="index.html" class="back-link">← Back to Home</a>
+          </div>
         </div>
-      </header>
-
-      <main>
-        <!-- EXPERIENCE -->
-        <section class="resume-section">
-          <h2>Professional Experience</h2>
-
-          <div class="role-header">
-            <h3>Navagis</h3>
-            <div class="role-meta">
-              Solutions Sales Manager, North America • 2024 – Present
-            </div>
-          </div>
-          <ul class="resume-bullets">
-            <li>
-              Own go-to-market execution and expansion strategy for Google Maps Platform solutions across
-              North America, operating within a usage-based revenue model.
-            </li>
-            <li>
-              Lead co-sell motions with Google Cloud and Maps field teams, aligning incentives, pipeline
-              strategy, and account planning across enterprise customers.
-            </li>
-            <li>
-              Drive platform adoption and expansion by translating technical capabilities into clear
-              commercial value for mobility, logistics, and retail customers.
-            </li>
-            <li>
-              Partner closely with engineering and product teams to surface adoption friction,
-              forecast expansion, and influence roadmap priorities.
-            </li>
-          </ul>
-
-          <div class="role-header">
-            <h3>ISI Analytics</h3>
-            <div class="role-meta">
-              Channel Partner Manager • 2022 – 2024
-            </div>
-          </div>
-          <ul class="resume-bullets">
-            <li>
-              Scaled channel-driven ARR by building repeatable partner motions across telecom and analytics ecosystems,
-              achieving 132 percent quota attainment across eight consecutive quarters.
-            </li>
-            <li>
-              Designed partner enablement frameworks that improved forecast accuracy,
-              shortened sales cycles, and increased expansion within existing accounts.
-            </li>
-            <li>
-              Operated as the connective tissue between sales, product, and partners to ensure
-              commercial strategy matched technical reality.
-            </li>
-          </ul>
-
-          <div class="role-header">
-            <h3>Parlayking LTD</h3>
-            <div class="role-meta">
-              Founder and Chief Revenue Officer • 2020 – 2022
-            </div>
-          </div>
-          <ul class="resume-bullets">
-            <li>
-              Founded and exited a SaaS analytics platform built on predictive modeling and Bayesian analysis.
-            </li>
-            <li>
-              Owned end-to-end GTM strategy including pricing, pipeline management, partnerships,
-              and early customer acquisition.
-            </li>
-            <li>
-              Built and coached a lean sales motion grounded in data, experimentation,
-              and rapid feedback loops.
-            </li>
-          </ul>
-
-          <div class="role-header">
-            <h3>Compliance Solutions</h3>
-            <div class="role-meta">
-              Channel Partner Account Manager • 2018 – 2020
-            </div>
-          </div>
-          <ul class="resume-bullets">
-            <li>
-              Managed and grew strategic channel accounts in a regulated SaaS environment,
-              driving repeatable revenue through trust-based partnerships.
-            </li>
-            <li>
-              Guided mid-market and enterprise customers through complex buying cycles
-              with a focus on long-term retention and expansion.
-            </li>
-          </ul>
-        </section>
-
-        <!-- CORE SKILLS -->
-        <section class="resume-section">
-          <h2>Core Competencies</h2>
-          <ul class="resume-bullets">
-            <li>Usage-based revenue forecasting and expansion modeling</li>
-            <li>Enterprise and platform go-to-market strategy</li>
-            <li>Partner ecosystems and hyperscaler co-sell motions</li>
-            <li>Sales operating cadence, pipeline discipline, and forecasting rigor</li>
-            <li>Cross-functional leadership with product, engineering, and RevOps</li>
-          </ul>
-        </section>
-
-        <!-- CTA -->
-        <div class="resume-actions">
-          <a class="btn btn-primary" href="assets/files/2025_Partnership_alliances.docx" download>
-            Download Résumé
-          </a>
-          <a class="btn" href="index.html">
-            Back to Home
-          </a>
-        </div>
-      </main>
+      </section>
 
       <footer>
         <p>© 2025 Robin C. Hoffpauir. All rights reserved.</p>
