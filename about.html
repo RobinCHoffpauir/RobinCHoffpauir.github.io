@@ -22,6 +22,27 @@
         box-shadow: var(--shadow-elevation-2);
       }
 
+      /* Artifact Embed Section */
+      .career-snapshot-embed {
+        margin: calc(var(--spacing-unit) * 6) 0;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      }
+
+      .career-snapshot-embed iframe {
+        display: block;
+        border: none;
+        border-radius: 20px;
+      }
+
+      .embed-caption {
+        text-align: center;
+        margin-top: calc(var(--spacing-unit) * 2);
+        color: var(--color-text-secondary);
+        font-size: 0.9rem;
+      }
+
       @media (max-width: 800px) {
         .about-hero {
           grid-template-columns: 1fr;
@@ -31,6 +52,10 @@
         .about-hero img {
           max-width: 260px;
           margin: 0 auto;
+        }
+
+        .career-snapshot-embed iframe {
+          height: 500px;
         }
       }
     </style>
@@ -84,6 +109,26 @@
               loading="lazy"
             />
           </figure>
+        </section>
+
+        <!-- INTERACTIVE CAREER SNAPSHOT EMBED -->
+        <section>
+          <h2>Career at a Glance</h2>
+          <p>
+            An interactive snapshot of my revenue leadership journey and key performance metrics.
+          </p>
+          <div class="career-snapshot-embed">
+            <iframe 
+              src="career-snapshot.html" 
+              title="Robin Hoffpauir - Career Snapshot" 
+              width="100%" 
+              height="700" 
+              frameborder="0"
+            ></iframe>
+          </div>
+          <p class="embed-caption">
+            Interactive career overview — hover over metrics and roles for details
+          </p>
         </section>
 
         <!-- EXPERIENCE AND CREDIBILITY -->

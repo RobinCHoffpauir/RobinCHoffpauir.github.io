@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robin Hoffpauir - Career Snapshot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .infographic {
+            width: 100%;
+            max-width: 1000px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            color: #e0e0e0;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-box {
+            background: rgba(102, 126, 234, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+            background: rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+        
+        .stat-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .journey {
+            background: rgba(102, 126, 234, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+        }
+        
+        .journey-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .role {
+            background: rgba(102, 126, 234, 0.08);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid rgba(102, 126, 234, 0.6);
+        }
+        
+        .role-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .role-company {
+            font-size: 0.95em;
+            opacity: 0.85;
+            margin-bottom: 3px;
+        }
+        
+        .role-date {
+            font-size: 0.85em;
+            opacity: 0.75;
+            margin-bottom: 12px;
+        }
+        
+        .role-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .metric-tag {
+            background: rgba(102, 126, 234, 0.2);
+            color: #a8b5ff;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+            border: 1px solid rgba(102, 126, 234, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 0.95em;
+            opacity: 0.9;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .infographic {
+                padding: 35px 25px;
+            }
+            .header {
+                margin-bottom: 35px;
+            }
+            .header h1 {
+                font-size: 2.2em;
+            }
+            .header .subtitle {
+                font-size: 1.1em;
+            }
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+                margin-bottom: 35px;
+            }
+            .stat-box {
+                padding: 25px 15px;
+            }
+            .stat-icon {
+                font-size: 2.5em;
+                margin-bottom: 12px;
+            }
+            .stat-number {
+                font-size: 2.5em;
+            }
+            .journey {
+                padding: 30px 25px;
+            }
+            .journey-title {
+                font-size: 1.6em;
+                margin-bottom: 25px;
+            }
+            .journey-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .role {
+                padding: 18px;
+            }
+            .footer {
+                font-size: 0.85em;
+                gap: 15px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .infographic {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <div class="header">
+            <h1>ROBIN HOFFPAUIR</h1>
+            <div class="subtitle">GTM Leader | Enterprise SaaS & Cloud Revenue</div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-icon">💰</div>
+                <div class="stat-number">$17M</div>
+                <div class="stat-label">ARR Portfolio</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-number">33%</div>
+                <div class="stat-label">Team Win Rate</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">📊</div>
+                <div class="stat-number">23%</div>
+                <div class="stat-label">Forecast Accuracy ↑</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">👥</div>
+                <div class="stat-number">12</div>
+                <div class="stat-label">Revenue Team Built</div>
+            </div>
+        </div>
+        
+        <div class="journey">
+            <div class="journey-title">Career Journey</div>
+            <div class="journey-grid">
+                <div class="role">
+                    <div class="role-title">Solutions Sales Manager</div>
+                    <div class="role-company">Navagis Inc.</div>
+                    <div class="role-date">Oct 2024 — Present</div>
+                    <div class="role-metrics">
+                        <span class="metric-tag">40% Growth in 1st Year</span>
+                        <span class="metric-tag">#5→#1 Google Maps Partner</span>
+                        <span class="metric-tag">33% Enterprise Win Rate</span>
+                    </div>
+                </div>
+                
+                <div class="role">
+                    <div class="role-title">Channel Sales Manager</div>
+                    <div class="role-company">ISI Analytics</div>
+                    <div class="role-date">Jun 2022 — Sep 2024</div>
+                    <div class="role-metrics">
+                        <span class="metric-tag">132% Average Quota Attainment</span>
+                        <span class="metric-tag">105% YoY ARR Growth</span>
+                        <span class="metric-tag">2× Avg Deal Size</span>
+                    </div>
+                </div>
+                
+                <div class="role">
+                    <div class="role-title">Founder & Head of Sales</div>
+                    <div class="role-company">Parlayking LTD</div>
+                    <div class="role-date">May 2020 — Jun 2022</div>
+                    <div class="role-metrics">
+                        <span class="metric-tag">Founded Predictive Sports SaaS</span>
+                        <span class="metric-tag">Built 6-Person Revenue Org</span>
+                        <span class="metric-tag">Successful Acquisition Exit</span>
+                    </div>
+                </div>
+                
+                <div class="role">
+                    <div class="role-title">Account Executive</div>
+                    <div class="role-company">Compliance Solutions</div>
+                    <div class="role-date">Aug 2018 — May 2020</div>
+                    <div class="role-metrics">
+                        <span class="metric-tag">300% Customer Base Growth</span>
+                        <span class="metric-tag">10%+ Over Quota Consistently</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div>📧 hoffpauirrobin@gmail.com</div>
+            <div>🌐 robinchoffpauir.github.io</div>
+            <div>🔗 linkedin.com/in/robinchoffpauir</div>
+        </div>
+    </div>
+</body>
+</html>
