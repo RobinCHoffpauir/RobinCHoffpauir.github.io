@@ -14,7 +14,7 @@
 
 - [ ] **Add platform GTM specialization statement** (index.html)
   - Insert after main value props, before "View Résumé" buttons
-  - Text: "Specialized in platform/API GTM where product usage doesn't equal revenue—and partners are your distribution engine, not just lead sources."
+  - Text: "Specialized in platform/API GTM incorporating hyperscalers, partners, and Product-Led-Growth."
 
 ## Medium Priority - Content Enhancement
 
