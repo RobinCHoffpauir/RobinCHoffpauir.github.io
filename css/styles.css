@@ -1234,3 +1234,17 @@
         animation-duration: 25s;
     }
 }
+
+/* Tech Logo Image Styling */
+.tech-logo-img {
+    max-width: 160px;
+    max-height: 45px;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.tech-logo:hover .tech-logo-img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
