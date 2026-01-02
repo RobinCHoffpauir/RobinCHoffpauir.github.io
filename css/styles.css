@@ -1029,3 +1029,222 @@
                 max-width: 300px;
             }
         }
+/* ============================================
+   INFINITE TECH STACK MARQUEE
+   ============================================ */
+
+.tech-stack-section {
+    background: linear-gradient(135deg, var(--navy-suit) 0%, var(--navy-dark) 100%);
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.tech-stack-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--baby-blue), transparent);
+}
+
+.tech-stack-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--white);
+}
+
+.tech-stack-header h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--baby-blue);
+    margin-bottom: 8px;
+}
+
+.tech-stack-header p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Marquee Container */
+.marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+.marquee-content {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+/* Logo Items */
+.tech-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    height: 100px;
+    margin: 0 30px;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(110, 193, 228, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.tech-logo:hover::before {
+    left: 100%;
+}
+
+.tech-logo:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--baby-blue);
+    transform: translateY(-5px);
+}
+
+/* Logo Text Styling */
+.tech-logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+}
+
+/* Brand Colors for Each Tech */
+.logo-salesforce { color: #00A1E0; }
+.logo-hubspot { color: #FF7A59; }
+.logo-apollo { color: #6C5CE7; }
+.logo-linkedin { color: #0A66C2; }
+.logo-zoho { color: #E42527; }
+.logo-gcp { color: #4285F4; }
+.logo-aws { color: #FF9900; }
+.logo-azure { color: #0089D6; }
+.logo-looker { color: #4285F4; }
+.logo-tableau { color: #E97627; }
+.logo-snowflake { color: #29B5E8; }
+.logo-python { color: #3776AB; }
+
+/* Logo Image Support (when using actual logos) */
+.tech-logo img {
+    max-width: 140px;
+    max-height: 50px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.tech-logo:hover img {
+    opacity: 1;
+    filter: brightness(1) invert(0);
+}
+
+/* Keyframe Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Fade edges for smooth appearance */
+.marquee::before,
+.marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--navy-suit), transparent);
+}
+
+.marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--navy-dark), transparent);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .tech-logo {
+        min-width: 150px;
+        height: 80px;
+        margin: 0 15px;
+        padding: 15px 20px;
+    }
+    
+    .tech-logo-text {
+        font-size: 16px;
+    }
+    
+    .marquee-content {
+        animation-duration: 30s;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-stack-section {
+        padding: 40px 0;
+    }
+    
+    .tech-logo {
+        min-width: 120px;
+        height: 70px;
+        margin: 0 10px;
+        padding: 12px 16px;
+    }
+    
+    .tech-logo-text {
+        font-size: 14px;
+    }
+    
+    .marquee-content {
+        animation-duration: 25s;
+    }
+}
+
+/* Tech Logo Image Styling */
+.tech-logo-img {
+    max-width: 160px;
+    max-height: 45px;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.tech-logo:hover .tech-logo-img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
