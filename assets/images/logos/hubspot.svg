@@ -1,6 +1,0 @@
-<svg width="140" height="50" viewBox="0 0 140 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="12" cy="25" r="6" fill="#FF7A59"/>
-  <circle cx="28" cy="25" r="4" fill="#FF7A59"/>
-  <path d="M12 19v12M28 21v8M20 13l8 8M20 37l8-8" stroke="#FF7A59" stroke-width="2" stroke-linecap="round"/>
-  <text x="38" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#FF7A59">HubSpot</text>
-</svg>

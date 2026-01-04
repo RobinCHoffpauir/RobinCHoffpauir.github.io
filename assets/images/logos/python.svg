@@ -1,6 +1,0 @@
-<svg width="140" height="50" viewBox="0 0 140 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 10h8c3 0 5 2 5 5v6h-8v2h12c3 0 5 2 5 5v6c0 3-2 5-5 5h-8c-3 0-5-2-5-5v-6h8v-2H11c-3 0-5-2-5-5v-6c0-3 2-5 5-5h5z" fill="#3776AB"/>
-  <circle cx="13" cy="14" r="1.5" fill="#FFD43B"/>
-  <circle cx="27" cy="30" r="1.5" fill="#FFD43B"/>
-  <text x="42" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#3776AB">Python</text>
-</svg>
