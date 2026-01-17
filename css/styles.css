@@ -591,6 +591,56 @@
             margin: 0 auto;
         }
 
+        /* About me content image */
+        .about-me-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .about-me .section-subtitle span {
+            display: inline-block;
+            margin-right: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            flex: 1 1 400px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .about-text .cta {
+            font-weight: bold;
+            color: #0078D4;
+            margin-top: 1.5rem;
+        }
+
+        .about-visual {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+
+        .about-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);         
+        }
         /* Value Props */
         .value-props {
             display: grid;
@@ -690,58 +740,113 @@
             line-height: 1.6;
         }
 
-        /* Metrics Grid */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .metric-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            border: 2px solid var(--light-gray);
-            border-top: 4px solid var(--baby-blue);
-            text-align: center;
-            transition: all 0.3s;
-            animation: scaleIn 0.5s ease-out both;
-        }
-
-        .metric-card:nth-child(1) { animation-delay: 0.1s; }
-        .metric-card:nth-child(2) { animation-delay: 0.2s; }
-        .metric-card:nth-child(3) { animation-delay: 0.3s; }
-        .metric-card:nth-child(4) { animation-delay: 0.4s; }
-        .metric-card:nth-child(5) { animation-delay: 0.5s; }
-        .metric-card:nth-child(6) { animation-delay: 0.6s; }
-
-        .metric-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(26, 38, 51, 0.08);
-            border-top-color: var(--cyan-api);
-        }
-
-        .metric-card:hover .metric-value {
-            color: var(--baby-blue);
-            transform: scale(1.1);
-        }
-
-        .metric-value {
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--navy-suit);
-            margin-bottom: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .metric-label {
-            font-size: 14px;
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
-
+         /* Metrics Grid */
+         .metrics-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+             gap: 25px;
+             max-width: 1000px;
+             margin: 0 auto;
+         }
+ 
+         /* Metric Card */
+         .metric-card {
+             position: relative;
+             overflow: hidden;
+ 
+             background: var(--white);
+             padding: 30px;
+             border-radius: 12px;
+             border: 2px solid var(--light-gray);
+             border-top: 4px solid var(--baby-blue);
+             text-align: center;
+ 
+             transition: all 0.3s;
+             animation: scaleIn 0.5s ease-out both;
+ 
+             /* progress fill variable */
+             --fill: 0%;
+         }
+ 
+         /* Progress Fill Layer */
+         .metric-card::before {
+             content: "";
+             position: absolute;
+             inset: 0;
+ 
+             background: linear-gradient(180deg,
+                     var(--baby-blue),
+                     var(--cyan-api));
+ 
+             opacity: 0.12;
+             transform: translateY(calc(100% - var(--fill)));
+             transition: transform 0.25s ease-out;
+ 
+             z-index: 0;
+         }
+ 
+         /* Ensure content stays above fill */
+         .metric-card>* {
+             position: relative;
+             z-index: 1;
+         }
+ 
+         /* Staggered entrance */
+         .metric-card:nth-child(1) {
+             animation-delay: 0.1s;
+         }
+ 
+         .metric-card:nth-child(2) {
+             animation-delay: 0.2s;
+         }
+ 
+         .metric-card:nth-child(3) {
+             animation-delay: 0.3s;
+         }
+ 
+         .metric-card:nth-child(4) {
+             animation-delay: 0.4s;
+         }
+ 
+         .metric-card:nth-child(5) {
+             animation-delay: 0.5s;
+         }
+ 
+         .metric-card:nth-child(6) {
+             animation-delay: 0.6s;
+         }
+ 
+         /* Hover Effects */
+         .metric-card:hover {
+             transform: translateY(-8px) scale(1.02);
+             box-shadow: 0 12px 30px rgba(26, 38, 51, 0.08);
+             border-top-color: var(--cyan-api);
+         }
+ 
+         .metric-card:hover::before {
+             opacity: 0.18;
+         }
+ 
+         .metric-card:hover .metric-value {
+             color: var(--baby-blue);
+             transform: scale(1.1);
+         }
+ 
+         /* Metric Value */
+         .metric-value {
+             font-size: 40px;
+             font-weight: 700;
+             color: var(--navy-suit);
+             margin-bottom: 8px;
+             transition: all 0.3s ease;
+         }
+ 
+         /* Metric Label */
+         .metric-label {
+             font-size: 14px;
+             color: var(--text-secondary);
+             font-weight: 600;
+         }
         /* Case Studies */
         .case-studies {
             max-width: 900px;
