@@ -11,7 +11,7 @@ Built with performance-first principles and deployed via GitHub Pages.
 
 ## 🚀 Overview
 
-This portfolio serves as a **central professional hub** — highlighting my track record in building revenue systems for API-first companies where traditional SaaS playbooks fail.
+This portfolio serves as a **central professional hub** , highlighting my track record in building revenue systems for API-first companies where traditional SaaS playbooks fail.
 
 ### ✨ Key Features
 
@@ -188,8 +188,8 @@ This portfolio is for professional display purposes. Code structure and optimiza
 Platform Revenue Leader
 
 - **Email:** hoffpauirrobin@gmail.com
-- **LinkedIn:** [linkedin.com/in/robinchoffpauir](https://linkedin.com/in/robinchoffpauir)
-- **Website:** [robinchoffpauir.com](https://robinchoffpauir.github.io)
+- **LinkedIn:** [linkedin.com/in/robinhoffpauir](https://linkedin.com/in/robinhoffpauir)
+- **Website:** [robinhoffpauir.com](https://robinchoffpauir.github.io)
 
 ---
 
