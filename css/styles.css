@@ -1386,3 +1386,220 @@
     transform: scale(1.05);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
+
+/* ============================================
+   PARTNER-FOCUSED SECTIONS
+   ============================================ */
+
+.hero-value {
+    font-size: 20px;
+    color: var(--white);
+    max-width: 720px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 auto 35px;
+    animation: fadeInUp 0.8s ease-out 0.35s both;
+}
+
+.hero-stat {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(110, 193, 228, 0.35);
+    border-radius: 12px;
+    padding: 16px 22px;
+    min-width: 180px;
+    max-width: 240px;
+}
+
+.hero-stat strong {
+    display: block;
+    font-size: 30px;
+    color: var(--baby-blue);
+}
+
+.hero-stat span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hero .hero-tagline {
+    font-size: 24px;
+}
+
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ecosystem-card {
+    background: var(--white);
+    border: 2px solid var(--light-gray);
+    border-top: 4px solid var(--navy-suit);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s;
+}
+
+.ecosystem-card:hover {
+    border-color: var(--baby-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(110, 193, 228, 0.15);
+}
+
+.ecosystem-logo {
+    height: 56px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.ecosystem-card h3 {
+    font-size: 20px;
+    color: var(--navy-suit);
+    margin-bottom: 4px;
+}
+
+.ecosystem-meta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--baby-blue-dark);
+    margin-bottom: 12px;
+}
+
+.ecosystem-card p {
+    color: var(--text-secondary);
+}
+
+.chips {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.chips li {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy-suit);
+    background: var(--light-gray);
+    border-radius: 999px;
+    padding: 4px 12px;
+}
+
+.cert-line {
+    text-align: center;
+    margin: 30px auto 0;
+    font-weight: 600;
+    color: var(--navy-suit);
+}
+
+.cert-badge {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    background: var(--tulane-green);
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.lifecycle-title {
+    text-align: center;
+    font-size: 24px;
+    color: var(--navy-suit);
+    margin: 60px 0 25px;
+}
+
+.lifecycle {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.lifecycle-step {
+    background: var(--white);
+    border: 2px solid var(--light-gray);
+    border-radius: 12px;
+    padding: 22px 18px;
+    text-align: center;
+}
+
+.lifecycle-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--navy-suit);
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.lifecycle-step h4 {
+    color: var(--navy-suit);
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.lifecycle-step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.podcast-section .podcast-figure {
+    background: var(--off-white);
+    border: 2px solid var(--light-gray);
+}
+
+.podcast-section .podcast-figure h3 {
+    color: var(--navy-suit);
+    margin-bottom: 12px;
+}
+
+.podcast-section .podcast-figure figcaption {
+    color: var(--text-secondary);
+}
+
+.open-to {
+    max-width: 640px;
+    margin: -10px auto 30px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+    .lifecycle {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .lifecycle {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stat {
+        max-width: 100%;
+        width: 100%;
+    }
+}
